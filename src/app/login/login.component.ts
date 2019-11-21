@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.authenticationService.logout();
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/jquery';
 
 
     this.renderer2.addClass(document.body, 'login-body');

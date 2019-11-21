@@ -14,6 +14,6 @@ export class InstallGuideComponent implements OnInit {
   }
 
   nextChapterClick() {
-    this.router.navigate(['/home/register-form']);
+    this.router.navigate(['/jquery/register-form']);
   }
 }

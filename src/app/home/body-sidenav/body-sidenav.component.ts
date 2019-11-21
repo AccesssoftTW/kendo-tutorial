@@ -29,7 +29,6 @@ export class BodySidenavComponent implements OnInit {
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
       .subscribe(e => {
-        console.log(e);
         (<HTMLElement>this.element.nativeElement).scrollIntoView();
       });
   }

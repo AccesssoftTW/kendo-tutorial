@@ -7,12 +7,13 @@ import { AuthGuardService } from "./_guard/auth-guard.service";
 import { HomeComponent } from "./home/home.component";
 import { GridComponent } from "./jquery/grid/grid.component";
 import { ChartComponent } from "./jquery/chart/chart.component";
+import { AngularGridComponent } from './angular/grid/grid.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   {
-    path: "home",
+    path: "jquery",
     component: HomeComponent,
     canActivate: [AuthGuardService],
     children: [
@@ -21,6 +22,15 @@ const routes: Routes = [
       { path: "register-form", component: RegisterFormComponent },
       { path: "grid", component: GridComponent },
       { path: "chart", component: ChartComponent }
+    ]
+  },
+  {
+    path: "angular",
+    component: HomeComponent,
+    canActivate: [AuthGuardService],
+    children: [
+      { path: "", redirectTo: "grid", pathMatch: "full" },
+      { path: "grid", component: AngularGridComponent },
     ]
   }
 ];

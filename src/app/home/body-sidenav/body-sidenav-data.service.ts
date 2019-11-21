@@ -15,26 +15,31 @@ export class BodySidenavDataService {
         lists: [
           {
             name: '環境準備',
-            route: '/home/install-guide'
+            route: '/jquery/install-guide'
           },
           {
             name: '表單',
-            route: '/home/register-form'
+            route: '/jquery/register-form'
           },
           {
             name: 'Grid',
-            route: '/home/grid'
+            route: '/jquery/grid'
           },
           {
             name: '圖表',
-            route: '/home/chart'
+            route: '/jquery/chart'
           }
         ]
       },
       {
         id: 2,
         name: 'Angular',
-        lists: []
+        lists: [
+          {
+            name: 'Grid',
+            route: '/angular/grid'
+          },
+        ]
       },
       {
         id: 3,
