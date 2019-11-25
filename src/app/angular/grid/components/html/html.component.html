@@ -89,13 +89,13 @@
 <div class="m1">
   <span class="tag">></span>
 </div>
-<div class="m1">
+<div class="m2">
   <span class="tag"><</span>
   <span class="tag">ng-template </span>
   <span class="atn">kendoGridToolbarTemplate</span>
   <span class="tag">></span>
 </div>
-<div class="m2">
+<div class="m3">
   <span class="tag"><</span>
   <span class="tag">button </span>
   <span class="atn">kendoGridAddCommand</span>
@@ -105,7 +105,7 @@
   <span class="tag">/button</span>
   <span class="tag">></span>
 </div>
-<div class="m2">
+<div class="m3">
   <span class="tag"><</span>
   <span class="tag">button </span>
   <span class="atn">kendoGridPDFCommand </span>
@@ -120,7 +120,7 @@
   <span class="tag">/button</span>
   <span class="tag">></span>
 </div>
-<div class="m2">
+<div class="m3">
   <span class="tag"><</span>
   <span class="tag">button </span>
   <span class="atn">kendoGridExcelCommand </span>
@@ -135,17 +135,287 @@
   <span class="tag">/button</span>
   <span class="tag">></span>
 </div>
-<div class="m1">
+<div class="m2">
   <span class="tag"><</span>
   <span class="tag">/ng-template</span>
   <span class="tag">></span>
 </div>
 
-<!-- 
-<ng-template kendoGridToolbarTemplate>
-  <button kendoGridAddCommand>Add new</button>
-  <button kendoGridPDFCommand icon="file-pdf">Export to PDF</button>
-  <button type="button" kendoGridExcelCommand icon="file-excel">
-    Export to Excel
-  </button>
-</ng-template> -->
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-column </span>
+
+  <span class="atn">field</span>
+  <span>="</span>
+  <span class="atv">ProductName</span>
+  <span>" </span>
+
+  <span class="atn">title</span>
+  <span>="</span>
+  <span class="atv">Product Name</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-column</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-column </span>
+
+  <span class="atn">field</span>
+  <span>="</span>
+  <span class="atv">UnitPrice</span>
+  <span>" </span>
+
+  <span class="atn">title</span>
+  <span>="</span>
+  <span class="atv">Price</span>
+  <span>" </span>
+
+  <span class="atn">editor</span>
+  <span>="</span>
+  <span class="atv">numeric</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+  
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-column</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-column </span>
+
+  <span class="atn">field</span>
+  <span>="</span>
+  <span class="atv">Discontinued</span>
+  <span>" </span>
+
+  <span class="atn">title</span>
+  <span>="</span>
+  <span class="atv">Discontinued</span>
+  <span>" </span>
+
+  <span class="atn">editor</span>
+  <span>="</span>
+  <span class="atv">boolean</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+  
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-column</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-column </span>
+
+  <span class="atn">field</span>
+  <span>="</span>
+  <span class="atv">UnitsInStock</span>
+  <span>" </span>
+
+  <span class="atn">title</span>
+  <span>="</span>
+  <span class="atv">Units In Stock</span>
+  <span>" </span>
+
+  <span class="atn">editor</span>
+  <span>="</span>
+  <span class="atv">numeric</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+  
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-column</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-command-column </span>
+
+  <span class="atn">title</span>
+  <span>="</span>
+  <span class="atv">command</span>
+  <span>" </span>
+  
+  <span class="atn">width</span>
+  <span>="</span>
+  <span class="atv">220</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+</div>
+
+
+<div class="m3">
+  <span class="tag"><</span>
+  <span class="tag">ng-template </span>
+  <span class="atn">kendoGridCellTemplate </span>
+
+  <span class="atn">let-isNew</span>
+  <span>="</span>
+  <span class="atv">isNew</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+</div>
+
+<div class="m4">
+  <span class="tag"><</span>
+  <span class="tag">button </span>
+  <span class="atn">kendoGridEditCommand </span>
+
+  <span>[</span>
+  <span class="atn">primary</span>
+  <span>]</span>
+  <span>="</span>
+  <span class="atv">true</span>
+  <span>"></span>
+  <span>Edit</span>
+  <span class="tag"><</span>
+  <span class="tag">/button</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m4">
+  <span class="tag"><</span>
+  <span class="tag">button </span>
+  <span class="atn">kendoGridRemoveCommand</span>
+  <span>></span>
+  <span>Remove</span>
+  <span class="tag"><</span>
+  <span class="tag">/button</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m4">
+  <span class="tag"><</span>
+  <span class="tag">button </span>
+  <span class="atn">kendoGridSaveCommand </span>
+
+  <span>[</span>
+  <span class="atn">disabled</span>
+  <span>]</span>
+  <span>="</span>
+  <span class="atv">formGroup?.invalid</span>
+  <span>"></span>
+  <span>{{</span>
+  <span>{{ " isNew ? 'Add' : 'Update' " }}</span>
+  <span>}}</span>
+  <span class="tag"><</span>
+  <span class="tag">/button</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m4">
+  <span class="tag"><</span>
+  <span class="tag">button </span>
+  <span class="atn">kendoGridCancelCommand</span>
+  <span>></span>
+  <span>{{</span>
+  <span>{{ " isNew ? 'Discard changes' : 'Cancel' " }}</span>
+  <span>}}</span>
+  <span class="tag"><</span>
+  <span class="tag">/button</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m3">
+  <span class="tag"><</span>
+  <span class="tag">/ng-template</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-command-column</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-excel </span>
+
+  <span class="atn">fileName</span>
+  <span>="</span>
+  <span class="atv">Products.xlsx</span>
+  <span>"</span>
+  <span class="tag">></span>
+
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-excel</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-pdf </span>
+
+  <span class="atn">fileName</span>
+  <span>="</span>
+  <span class="atv">Products.pdf</span>
+  <span>" </span>
+
+  <span>[</span>
+  <span class="atn">allPages</span>
+  <span>]</span>
+  <span>="</span>
+  <span class="atv">true</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+</div>
+
+<div class="m3">
+  <span class="tag"><</span>
+  <span class="tag">kendo-grid-pdf-margin </span>
+
+  <span class="atn">top</span>
+  <span>="</span>
+  <span class="atv">1cm</span>
+  <span>" </span>
+
+  <span class="atn">left</span>
+  <span>="</span>
+  <span class="atv">1cm</span>
+  <span>" </span>
+
+  <span class="atn">right</span>
+  <span>="</span>
+  <span class="atv">1cm</span>
+  <span>" </span>
+
+  <span class="atn">bottom</span>
+  <span>="</span>
+  <span class="atv">1cm</span>
+  <span>"</span>
+
+  <span class="tag">></span>
+
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-pdf-margin</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m2">
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid-pdf</span>
+  <span class="tag">></span>
+</div>
+
+<div class="m1">
+  <span class="tag"><</span>
+  <span class="tag">/kendo-grid</span>
+  <span class="tag">></span>
+</div>
