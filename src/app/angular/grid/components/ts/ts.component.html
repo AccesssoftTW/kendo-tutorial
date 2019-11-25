@@ -87,3 +87,234 @@
     <span class="atv">'rxjs/operators'</span>
     <span class="">;</span>
 </div>
+<br>
+<div>
+    <div class="m1">
+        <span class="">@</span>
+        <span class="tag">Component</span>
+        <span class="">{{ '({' }}</span>
+    </div>
+    <div class="m2">
+        <span class="">selector: </span>
+        <span class="atv">'app-root'</span>
+        <span class="">,</span>
+    </div>
+    <div class="m2">
+        <span class="">templateUrl: </span>
+        <span class="atv">'./app.component.html'</span>
+        <span class="">,</span>
+    </div>
+    <div class="m2">
+        <span class="">styleUrls: </span>
+        <span class="">[ </span>
+        <span class="atv">'./app.component.scss'</span>
+        <span class=""> ]</span>
+    </div>
+    <div class="m1">
+        <span class="">{{ '})' }}</span>
+    </div>
+</div>
+
+<div>
+    <div class="m1">
+        <span class="pun">export </span>
+        <span class="">class </span>
+        <span class="tag">AppComponent </span>
+        <span class="">implements </span>
+        <span class="tag">OnInit </span>
+        <span class="">{{ '{' }}</span>
+    </div>
+    <div class="code-annotation m2">
+        // 畫面顯示的資料
+    </div>
+    <div class="m2">
+        <span>public </span>
+        <span>view: </span>
+        <span class="tag">Observable</span>
+        <span>
+            <</span> <span class="tag">GridDataResult
+        </span>
+        <span>></span>
+        <span>;</span>
+    </div>
+    <div class="code-annotation m2">
+        // Angular的表單驗證設定參數
+    </div>
+    <div class="m2">
+        <span>public </span>
+        <span>formGroup: </span>
+        <span class="tag">FormGroup</span>
+        <span>;</span>
+    </div>
+    <div class="code-annotation m2">
+        // 針對資料行為處理的邏輯服務提供者
+    </div>
+    <div class="m2">
+        <span>private </span>
+        <span>editService: </span>
+        <span class="tag">EditService</span>
+        <span>;</span>
+    </div>
+    <div class="code-annotation m2">
+        // 紀錄正在編輯的資料行數
+    </div>
+    <div class="m2">
+        <span>private </span>
+        <span>editedRowIndex: </span>
+        <span class="pun">number</span>
+        <span>;</span>
+    </div>
+    <div class="code-annotation m2">
+        // 提供 Grid 做狀態(排序、分頁、筆數)控制
+    </div>
+    <div>
+        <div class="m2">
+            <span class="">public </span>
+            <span class="">gridState</span>
+            <span class="">: </span>
+            <span class="tag">State </span>
+            <span class="">= </span>
+            <span class="tag">{{ '{' }}</span>
+        </div>
+        <div class="m3">
+            <span class="">sort</span>
+            <span class="">: </span>
+            <span class="atv">[ ] </span>
+            <span class="">, </span>
+        </div>
+        <div class="m3">
+            <span class="">skip</span>
+            <span class="">: </span>
+            <span class="atv">0 </span>
+            <span class="">, </span>
+        </div>
+        <div class="m3">
+            <span class="">take</span>
+            <span class="">: </span>
+            <span class="atv">10</span>
+        </div>
+        <div class="m2">
+            <span class="tag">{{ '}' }}</span>
+        </div>
+    </div>
+
+    <div class="code-annotation m2">
+        // 於建構子將service注入
+    </div>
+    <div>
+        <div class="m2">
+            <span class="">constructor</span>
+            <span class="">(@</span>
+            <span class="tag">Inject</span>
+            <span class="">(</span>
+            <span class="tag">EditService</span>
+            <span class="">) </span>
+            <span class="">editServiceFactory</span>
+            <span class="tag">: </span>
+            <span class="pun">any </span>
+            <span class="tag">{{ '{' }}</span>
+        </div>
+        <div class="m3">
+            <span class="tag">this</span>
+            <span class="tag">.</span>
+            <span class="tag">editService </span>
+            <span class="">= </span>
+            <span class="tag">editServiceFactory</span>
+            <span class="">();</span>
+        </div>
+        <div class="m2">
+            <span class="tag">{{ '}' }}</span>
+        </div>
+    </div>
+    <div>
+        <div class="m2">
+            <span class="">public </span>
+            <span class="tag">ngOnInit</span>
+            <span class="">()</span>
+            <span class="">: </span>
+            <span class="pun">void </span>
+            <span class="">{{ '{' }}</span>
+        </div>
+        <div class="code-annotation m3">
+            // 將view變數帶入pipe涵式，觀察資料的異動，並於畫面動態調整
+        </div>
+        <div class="m3">
+            <span class="tag">this</span>
+            <span class="">.</span>
+            <span class="tag">view </span>
+            <span class="">= </span>
+            <span class="tag">this</span>
+            <span class="">.</span>
+            <span class="tag">editService</span>
+            <span class="">.</span>
+            <span class="tag">pipe</span>
+            <span class="">(</span>
+            <span class="tag">map</span>
+            <span class="">(</span>
+            <span class="">data </span>
+            <span class="">=> </span>
+            <span class="">process</span>
+            <span class="tag">(</span>
+            <span class="tag">data</span>
+            <span class="">, </span>
+            <span class="tag">this</span>
+            <span class="">.</span>
+            <span class="tag">gridState</span>
+            <span class="">)));</span>
+        </div>
+        <div class="code-annotation m3">
+            // 先讀取初始資料做畫面呈現
+        </div>
+        <div class="m3">
+            <span class="tag">this</span>
+            <span class="">.</span>
+            <span class="tag">editService</span>
+            <span class="">.</span>
+            <span class="tag">read</span>
+            <span class="">();</span>
+        </div>
+        <div class="m2">
+            <span class="tag">{{ '}' }}</span>
+        </div>
+    </div>
+    <div>
+        <div class="m2">
+            <span class="">public </span>
+            <span class="tag">onStateChange</span>
+            <span class="">(</span>
+            <span class="">state</span>
+            <span class="">: </span>
+            <span class="tag">State</span>
+            <span class="">) </span>
+            <span class="">{{ '{' }}</span>
+        </div>
+        <div class="code-annotation m3">
+            // 將 Grid 回饋的狀態，拿來更新內部的gridState
+        </div>
+        <div class="m3">
+            <span class="tag">this</span>
+            <span class="">.</span>
+            <span class="tag">gridState </span>
+            <span class="">= </span>
+            <span class="tag">state</span>
+            <span class="">;</span>
+        </div>
+        <div class="code-annotation m3">
+            // 更新完最新的 Grid 狀態後，重新讀取資料
+        </div>
+        <div class="m3">
+            <span class="tag">this</span>
+            <span class="">.</span>
+            <span class="tag">editService</span>
+            <span class="">.</span>
+            <span class="tag">read</span>
+            <span class="">();</span>
+        </div>
+        <div class="m2">
+            <span class="tag">{{ '}' }}</span>
+        </div>
+    </div>
+    <div class="m1">
+        <span class="">{{ '}' }}</span>
+    </div>
+</div>
