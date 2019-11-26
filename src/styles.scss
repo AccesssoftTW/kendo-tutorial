@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 
-$primary-font: 'Noto Sans TC';
+$primary-font: "Noto Sans TC";
 
 body,
 html {
@@ -31,8 +31,16 @@ html {
   color: #800;
 }
 
+.pop {
+  color: #6f9688;
+}
+
+.rty {
+  color: #4d4d9c;
+}
+
 .source-code-card {
-  font-family: 'Noto Sans TC', sans-serif !important;
+  font-family: "Noto Sans TC", sans-serif !important;
   width: 70%;
   margin: auto;
   // background-color: #f9f2e7 !important;
