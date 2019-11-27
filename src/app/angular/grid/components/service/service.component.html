@@ -1,0 +1,185 @@
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">Injectable </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@angular/core'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">Observable</span>
+  <span class="">, </span>
+  <span class="rty">BehaviorSubject</span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'rxjs'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">HttpClient </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@angular/common/http'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">tap</span>
+  <span class="">, </span>
+  <span class="rty">map</span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'rxjs'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span>const </span>
+  <span class="rty">CREATE_ACTION </span>
+  <span>= </span>
+  <span class="pop">'create' </span>
+  <span>;</span>
+</div>
+<div class="m1">
+  <span>const </span>
+  <span class="rty">UPDATE_ACTION </span>
+  <span>= </span>
+  <span class="pop">'update' </span>
+  <span>;</span>
+</div>
+<div class="m1">
+  <span>const </span>
+  <span class="rty">REMOVE_ACTION </span>
+  <span>= </span>
+  <span class="pop">'destroy' </span>
+  <span>;</span>
+</div>
+<div class="m1">
+  <span class="">@</span>
+  <span class="rty">Injectable</span>
+  <span class="">()</span>
+</div>
+<div>
+  <div class="m1">
+    <span class="pun">export </span>
+    <span class="">class </span>
+    <span class="rty">EditService </span>
+    <span class="">extends </span>
+    <span class="rty">BehaviorSubject</span>
+    <span class=""><</span>
+    <span class="pun">any</span>
+    <span class="">[]</span>
+    <span class="">></span>
+    <span class="">{{ "{" }}</span>
+  </div>
+  <div>
+    <div class="m2">
+      <span class="">constructor</span>
+      <span class="">(</span>
+      <span class="">private </span>
+      <span class="">http</span>
+      <span class="">: </span>
+      <span class="rty">HttpClient</span>
+      <span class="">)</span>
+      <span class="">{{ "{" }}</span>
+    </div>
+    <div class="m3">
+      <span class="rty">super</span>
+      <span class="">([]);</span>
+    </div>
+    <div class="m2">
+      <span class="rty">{{ "}" }}</span>
+    </div>
+  </div>
+  <div>
+    <div class="m2">
+      <span>private </span>
+      <span>data: </span>
+      <span class="pun">any</span>
+      <span>[] = [];</span>
+    </div>
+  </div>
+  <div>
+    <div class="m2">
+      <span class="">public </span>
+      <span class="rty">read</span>
+      <span class="">() </span>
+      <span class="">{{ "{" }}</span>
+    </div>
+    <div class="code-annotation m3">
+      // 將編輯中的資料關閉
+    </div>
+    <div>
+      <div class="m3">
+        <span class="pun">if </span>
+        <span class="">(</span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">data</span>
+        <span class="">.</span>
+        <span class="">length</span>
+        <span class="">) </span>
+        <span class="">{{ "{" }}</span>
+      </div>
+      <div class="m4">
+        <span class="pun">return </span>
+        <span class="rty">super</span>
+        <span class="">.</span>
+        <span class="rty">next</span>
+        <span class="">(</span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="">data</span>
+        <span class="">);</span>
+      </div>
+      <div class="m3">
+        <span class="">{{ "}" }}</span>
+      </div>
+    </div>
+    <div>
+      <div class="m3">
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">fetch</span>
+        <span class="">().</span>
+        <span class="rty">pipe</span>
+        <span class="">(</span>
+        <span class="rty">tap</span>
+        <span class="">(</span>
+        <span class="">data </span>
+        <span class="">=> </span>
+        <span class="">{{ "{" }} </span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="">data </span>
+        <span class="">= </span>
+        <span class="rty">data</span>
+        <span class="">; </span>
+        <span class="">{{ "}); )" }}</span>
+      </div>
+      <div class="m4">
+        <span class="">.</span>
+        <span class="rty">subscribe</span>
+        <span class="">(</span>
+        <span class="">data </span>
+        <span class="">=> </span>
+        <span class="">{{ "{" }} </span>
+        <span class="rty">super</span>
+        <span class="">.</span>
+        <span class="">next </span>
+        <span class="">(</span>
+        <span class="rty">data</span>
+        <span class="">); </span>
+        <span class="">{{ "});" }}</span>
+      </div>
+    </div>
+    <div class="m2">
+      <span class="rty">{{ "}" }}</span>
+    </div>
+  </div>
+</div>

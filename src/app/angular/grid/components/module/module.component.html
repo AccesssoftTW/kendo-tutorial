@@ -1,0 +1,195 @@
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">BrowserModule </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@angular/platform-browser'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">NgModule </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@angular/core'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">AppComponent </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'./app.component'</span>
+  <span class="">;</span>
+</div>
+
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">PDFModule</span>
+  <span class="">, </span>
+  <span class="rty">ExcelModule</span>
+  <span class="">, </span>
+  <span class="rty">GridModule </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@progress/kendo-angular-grid'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">HttpClient</span>
+  <span class="">, </span>
+  <span class="rty">HttpClientModule</span>
+  <span class="">, </span>
+  <span class="rty">HttpClientJsonpModule </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@angular/common/http'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">ReactiveFormsModule </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@angular/forms'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">BrowserAnimationsModule </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'@angular/platform-browser/animations'</span>
+  <span class="">;</span>
+</div>
+<div class="m1">
+  <span class="pun">import </span>
+  <span class="">{{ "{" }} </span>
+  <span class="rty">EditService </span>
+  <span class="">{{ "}" }} </span>
+  <span class="pun">from </span>
+  <span class="atv">'./edit.service'</span>
+  <span class="">;</span>
+</div>
+<div>
+  <div class="m1">
+    <span class="">@</span>
+    <span class="rty">NgModule</span>
+    <span class="">{{ "({" }}</span>
+  </div>
+  <div class="m2">
+    <div>
+      <span class="">declarations: [</span>
+    </div>
+    <div class="m1">
+      <span class="rty">AppComponent</span>
+    </div>
+    <div>
+      <span class="">],</span>
+    </div>
+  </div>
+  <div class="m2">
+    <div>
+      <span class="">imports: [</span>
+    </div>
+    <div class="m1">
+      <span class="rty">HttpClientModule</span>
+      <span class="">,</span>
+    </div>
+    <div class="m1">
+      <span class="rty">HttpClientJsonpModule</span>
+      <span class="">,</span>
+    </div>
+    <div class="m1">
+      <span class="rty">ReactiveFormsModule</span>
+      <span class="">,</span>
+    </div>
+    <div class="m1">
+      <span class="rty">ExcelModule</span>
+      <span class="">,</span>
+    </div>
+    <div class="m1">
+      <span class="rty">PDFModule</span>
+      <span class="">,</span>
+    </div>
+    <div class="m1">
+      <span class="rty">BrowserModule</span>
+      <span class="">,</span>
+    </div>
+    <div class="m1">
+      <span class="rty">GridModule</span>
+      <span class="">,</span>
+    </div>
+    <div class="m1">
+      <span class="rty">BrowserAnimationsModule</span>
+      <span class="">,</span>
+    </div>
+    <div>
+      <span class="">],</span>
+    </div>
+  </div>
+  <div class="m2">
+    <div>
+      <span class="">providers: [</span>
+    </div>
+    <div class="m1">
+      <span class="">{{ "{" }}</span>
+    </div>
+    <div class="m2">
+      <span class="">deps</span>
+      <span class="">: [</span>
+      <span class="rty">HttpClient</span>
+      <span class="">]</span>
+    </div>
+    <div class="m2">
+      <span class="">provide</span>
+      <span class="">: </span>
+      <span class="rty">EditService</span>
+    </div>
+    <div class="m2">
+      <span class="">useFactory</span>
+      <span class="">: (jsonp: </span>
+      <span class="rty">HttpClient</span>
+      <span class="">) => () => </span>
+      <span class="pun">new </span>
+      <span class="rty">EditService</span>
+      <span class="">(</span>
+      <span class="rty">jsonp</span>
+      <span class="">)</span>
+    </div>
+    <div class="m1">
+      <span class="">{{ "}" }}</span>
+    </div>
+    <div>
+      <span class="">],</span>
+    </div>
+  </div>
+  <div class="m2">
+    <div>
+      <span class="">bootstrap: [</span>
+    </div>
+    <div class="m1">
+      <span class="rty">AppComponent</span>
+    </div>
+    <div>
+      <span class="">],</span>
+    </div>
+  </div>
+  <div class="m1">
+    <span class="">{{ "})" }}</span>
+  </div>
+</div>
+<div class="m1">
+  <span class="pun">export </span>
+  <span class="">class </span>
+  <span class="rty">AppModule </span>
+  <span class="">{{ "{ }" }}</span>
+</div>
