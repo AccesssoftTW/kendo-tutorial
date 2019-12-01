@@ -111,9 +111,6 @@
       <span class="">() </span>
       <span class="">{{ "{" }}</span>
     </div>
-    <div class="code-annotation m3">
-      // 將編輯中的資料關閉
-    </div>
     <div>
       <div class="m3">
         <span class="pun">if </span>
@@ -140,6 +137,9 @@
       <div class="m3">
         <span class="">{{ "}" }}</span>
       </div>
+    </div>
+    <div class="code-annotation m3">
+      // 撈取資料完成後，暫存資料，並將最新的資料，拿去通知有註冊此service的變數
     </div>
     <div>
       <div class="m3">
@@ -181,5 +181,305 @@
     <div class="m2">
       <span class="rty">{{ "}" }}</span>
     </div>
+  </div>
+  <div>
+    <div class="m2">
+      <span class="">public </span>
+      <span class="rty">save</span>
+      <span class="">( </span>
+      <span class="">data</span>
+      <span class="">: </span>
+      <span class="pun">any</span>
+      <span class="">, </span>
+      <span class="">isNew</span>
+      <span class="pun">?</span>
+      <span class="">: </span>
+      <span class="pun">boolean </span>
+      <span class="">) </span>
+      <span class="">{{ "{" }}</span>
+    </div>
+    <div class="m3">
+      <span class="pun">const </span>
+      <span class="rty">action </span>
+      <span class="rty">isNew </span>
+      <span class="pun">? </span>
+      <span class="rty">CREATE_ACTION </span>
+      <span class="">: </span>
+      <span class="rty">UPDATE_ACTION</span>
+      <span class="">; </span>
+    </div>
+    <div class="m3">
+      <span class="rty">this</span>
+      <span class="">.</span>
+      <span class="rty">reset</span>
+      <span class="">();</span>
+    </div>
+    <div class="code-annotation m3">
+      // 操作完成後，重新讀取資料
+    </div>
+    <div>
+      <div class="m3">
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">fetch</span>
+        <span class="">( </span>
+        <span class="rty">action</span>
+        <span class="">, </span>
+        <span class="rty">data</span>
+        <span class="">)</span>
+      </div>
+      <div class="m4">
+        <span class="">.</span>
+        <span class="rty">subscribe</span>
+        <span class="">(() </span>
+        <span class="">=> </span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">read</span>
+        <span class="">(), </span>
+        <span class="">() </span>
+        <span class="">=> </span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">read</span>
+        <span class="">()); </span>
+      </div>
+    </div>
+    <div class="m2">
+      <span class="rty">{{ "}" }}</span>
+    </div>
+  </div>
+  <div>
+    <div class="m2">
+      <span class="">public </span>
+      <span class="rty">remove</span>
+      <span class="">( </span>
+      <span class="">data</span>
+      <span class="">: </span>
+      <span class="pun">any</span>
+      <span class="">) </span>
+      <span class="">{{ "{" }}</span>
+    </div>
+    <div class="m3">
+      <span class="rty">this</span>
+      <span class="">.</span>
+      <span class="rty">reset</span>
+      <span class="">();</span>
+    </div>
+    <div class="code-annotation m3">
+      // 操作完成後，重新讀取資料
+    </div>
+    <div>
+      <div class="m3">
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">fetch</span>
+        <span class="">( </span>
+        <span class="rty">REMOVE_ACTION</span>
+        <span class="">, </span>
+        <span class="rty">data</span>
+        <span class="">)</span>
+      </div>
+      <div class="m4">
+        <span class="">.</span>
+        <span class="rty">subscribe</span>
+        <span class="">(() </span>
+        <span class="">=> </span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">read</span>
+        <span class="">(), </span>
+        <span class="">() </span>
+        <span class="">=> </span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="rty">read</span>
+        <span class="">()); </span>
+      </div>
+    </div>
+    <div class="m2">
+      <span class="rty">{{ "}" }}</span>
+    </div>
+  </div>
+  <div>
+    <div class="m2">
+      <span class="">public </span>
+      <span class="rty">resetItem</span>
+      <span class="">( </span>
+      <span class="">dataItem</span>
+      <span class="">: </span>
+      <span class="pun">any</span>
+      <span class="">) </span>
+      <span class="">{{ "{" }}</span>
+    </div>
+    <div class="m3">
+        <span class="pun">if </span>
+        <span class="">(</span>
+        <span class="">!</span>
+        <span class="rty">dataItem</span>
+        <span class="">) </span>
+        <span class="">{{'{ '}}</span>
+        <span class="pun">return</span>
+        <span class="">; </span>
+        <span>{{'}'}}</span>
+    </div>
+    <div class="code-annotation m3">
+      // 找出原始資料
+    </div>
+    <div class="m3">
+        <span class="">const </span>
+        <span class="rty">originalDataItem </span>
+        <span class="">= </span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="">data</span>
+        <span class="rty">.</span>
+        <span class="">find</span>
+        <span class="">(</span>
+        <span class="">item </span>
+        <span class="">=> </span>
+        <span class="rty">item</span>
+        <span class="">.</span>
+        <span class="rty">ProductID </span>
+        <span class="">=== </span>
+        <span class="rty">dataItem</span>
+        <span class="">.</span>
+        <span class="rty">ProductID</span>
+        <span class="">);</span>
+    </div>
+    <div class="m3">
+        <span class="pun">Object</span>
+        <span class="rty">.</span>
+        <span class="rty">assign</span>
+        <span class="">(</span>
+        <span class="rty">originalDataItem</span>
+        <span class="">, </span>
+        <span class="rty">dataItem</span>
+        <span class="">);</span>
+    </div>
+    <div class="m3">
+        <span class="rty">super</span>
+        <span class="">.</span>
+        <span class="rty">next</span>
+        <span class="">(</span>
+        <span class="rty">this</span>
+        <span class="">.</span>
+        <span class="">data</span>
+        <span class="">);</span>
+    </div>
+    <div class="m2">
+      <span class="rty">{{ "}" }}</span>
+    </div>
+  </div>
+  <div>
+      <div class="m2">
+        <span class="">private </span>
+        <span class="rty">resetItem</span>
+        <span class="">() </span>
+        <span class="">{{ "{" }}</span>
+      </div>
+      <div class="m3">
+          <span class="rty">this</span>
+          <span class="">.</span>
+          <span class="">data </span>
+          <span class="">= </span>
+          <span class="">[]</span>
+          <span class="">);</span>
+      </div>
+      <div class="m2">
+        <span class="rty">{{ "}" }}</span>
+      </div>
+  </div>
+  <div>
+        <div class="m2">
+          <span class="">private </span>
+          <span class="rty">fetch</span>
+          <span class="">(</span>
+          <span class="">action</span>
+          <span class="">: </span>
+          <span class="pun">string </span>
+          <span class="">= </span>
+          <span class="">'', </span>
+          <span class="">data</span>
+          <span class="pun">?</span>
+          <span class="">: </span>
+          <span class="pun">any</span>
+          <span class="">) </span>
+          <span class="">: </span>
+          <span class="rty">Observable</span>
+          <span class=""><</span>
+          <span class="pun">any</span>
+          <span class="">></span>
+          <span class="">) </span>
+          <span class="">{{ "{" }}</span>
+        </div>
+        <div class="m3">
+            <span class="pun">return </span>
+            <span class="rty">this</span>
+            <span class="">.</span>
+            <span class="rty">http </span>
+        </div>
+        <div class="m4">
+            <span class="">.</span>
+            <span class="rty">jsonp</span>
+            <span class="">(</span>
+            <span class="pop">{{ '`https://demos.telerik.com/kendo-ui/service/Products/${' }}</span>
+            <span class="rty">action</span>
+            <span class="pop">{{ '}?${' }}</span>
+            <span class="rty">this.serializeModels(data)</span>
+            <span class="pop">{{ '}`' }}</span>
+            <span class="">, </span>
+            <span class="pop">'callback'</span>
+            <span class="">)</span>
+        </div>
+        <div class="m4">
+            <span class="">.</span>
+            <span class="rty">pipe</span>
+            <span class="">(</span>
+            <span class="rty">map</span>
+            <span class="">(</span>
+            <span class="">res </span>
+            <span class="">=> </span>
+            <span class=""><</span>
+            <span class="pun">any</span>
+            <span class="">[]</span>
+            <span class="">></span>
+            <span class="rty">res</span>
+            <span class="">);</span>
+        </div>
+        <div class="m2">
+          <span class="rty">{{ "}" }}</span>
+        </div>
+  </div>
+  <div>
+      <div class="m2">
+        <span class="">private </span>
+        <span class="rty">serializeModels</span>
+        <span class="">(</span>
+        <span class="">data</span>
+        <span class="pun">?</span>
+        <span class="">: </span>
+        <span class="pun">any </span>
+        <span class="">)</span>
+        <span class="">: </span>
+        <span class="pun">string </span>
+        <span class="">{{ "{" }}</span>
+      </div>
+      <div class="m3">
+          <span class="pun">return </span>
+          <span class="rty">data </span>
+          <span class="pun">? </span>
+          <span class="pop">{{ '`&models=${' }}</span>
+          <span class="rty">JSON.stringify([data])</span>
+          <span class="pop">{{ '}` ' }}</span>
+          <span class="rty">: </span>
+          <span class="rty">''; </span>
+      </div>
+      <div class="m2">
+        <span class="rty">{{ "}" }}</span>
+      </div>
+  </div>
+  <div class="m1">
+      <span class="rty">{{ "}" }}</span>
   </div>
 </div>

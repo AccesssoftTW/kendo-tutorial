@@ -19,20 +19,39 @@
 </h3>
 <mat-card class="source-code-tab-card">
   <mat-tab-group class="tab-source-code-background">
+    <mat-tab label="app.component.html">
+      <app-html></app-html>
+    </mat-tab>
+    <mat-tab label="app.component.ts">
+      <app-ts></app-ts>
+    </mat-tab>
     <mat-tab label="edit.service.ts">
       <app-service></app-service>
     </mat-tab>
     <mat-tab label="app.module.ts">
       <app-module></app-module>
     </mat-tab>
-    <mat-tab label="app.component.ts">
-      <app-ts></app-ts>
-    </mat-tab>
-    <mat-tab label="app.component.html">
-      <app-html></app-html>
-    </mat-tab>
     <mat-tab label="model.ts">
       <app-model></app-model>
     </mat-tab>
   </mat-tab-group>
+</mat-card>
+<h3>
+  查詢
+</h3>
+<h4>
+  - 最簡單的方式 [filterable] = true、[filterable] = "menu"
+  <br />
+  - 提供自定義的事件 (filterChange) = "myFilterChange($event)"
+  <br />
+  - 依照
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/dataquery/api/FilterDescriptor/"
+  >
+    FilterDescriptor
+  </a>
+  的格式，設定初始化的查詢 [filter]="myfilter"，格式範例如下
+</h4>
+<mat-card class="source-code-card">
+  <app-filter></app-filter>
 </mat-card>
