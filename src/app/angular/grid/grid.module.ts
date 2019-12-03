@@ -7,9 +7,10 @@ import { ModuleComponent } from './components/module/module.component';
 import { ServiceComponent } from './components/service/service.component';
 import { ModelComponent } from './components/model/model.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { SortComponent } from './components/sort/sort.component';
 
 @NgModule({
-  declarations: [AngularGridComponent, HtmlComponent, TsComponent, ModuleComponent, ServiceComponent, ModelComponent, FilterComponent],
+  declarations: [AngularGridComponent, HtmlComponent, TsComponent, ModuleComponent, ServiceComponent, ModelComponent, FilterComponent, SortComponent],
   imports: [AngularMaterialModule],
   exports: [AngularGridComponent]
 })
