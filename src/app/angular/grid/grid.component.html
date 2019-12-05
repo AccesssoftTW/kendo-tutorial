@@ -42,32 +42,71 @@
 <h4>
   - 最簡單的方式 [filterable] = true、[filterable] = "menu"
   <br />
-  - 提供自定義的事件 (filterChange) = "myFilterChange($event)"
+  - [Optional] 提供自定義的事件 (filterChange) = "myFilterChange($event)"
   <br />
-  - 依照
-  <a href="https://www.telerik.com/kendo-angular-ui/components/dataquery/api/FilterDescriptor/" target="blank">
+  - [Optional] 依照
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/dataquery/api/FilterDescriptor/"
+    target="blank"
+  >
     FilterDescriptor
   </a>
   的格式，設定初始化的查詢 [filter]="myfilter"，格式範例如下
-  <br>
-  - 如果要進一步客製化查詢樣式，可以參考
-  <a href="https://www.telerik.com/kendo-angular-ui/components/grid/filtering/built-in-template/" target="blank">
+  <br />
+  - [Optional] 如果要進一步客製化查詢樣式，可以參考
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/grid/filtering/built-in-template/"
+    target="blank"
+  >
     Build-In Filter Template
   </a>
 </h4>
 <mat-card class="source-code-card">
   <app-filter></app-filter>
 </mat-card>
+
+<h3>
+  新增/編輯/刪除
+</h3>
+<h4>
+  我們可以在範例程式碼中，找到下面的程式碼
+  <br />
+  於 kendo-grid-command-column
+  中將編輯、刪除、存檔、取消的按鈕加入，以利啟動功能
+</h4>
+<img class="img-card" src="assets/grid/crud-button.png" />
+<h4>
+  加入新增的按鈕於 kendoGridToolbarTemplate 中
+  <br />
+  另外將新增、刪除、編輯的事件，指定給 Kendo UI
+</h4>
+<img class="img-card" src="assets/grid/crud-event.png" />
+<h4>
+  可以在自己所提供的function邏輯中，調用 Kendo UI 提供的事件
+  <br />
+  - sender.addRow()
+  <br />
+  - sender.editRow()
+  <br />
+  - sender.removeRow()
+  <br />
+  - sender.closeRow()
+</h4>
+<img class="img-card" src="assets/grid/kendo-grid-curd-event.png" />
 <h3>
   分頁
 </h3>
 <h4>
-  - 需要設定 [pageSize]="gridState.take" [skip]="gridState.skip" [pageable]="true"
+  - 需要設定 [pageSize]="gridState.take" [skip]="gridState.skip"
+  [pageable]="true"
   <br />
-  - 提供自定義的事件 (pageChange) = "myPageChange($event)"
+  - [Optional] 提供自定義的事件 (pageChange) = "myPageChange($event)"
   <br />
-  - 如果要進一步客製化查詢樣式，可以參考
-  <a href="https://www.telerik.com/kendo-angular-ui/components/grid/paging/" target="blank">
+  - [Optional] 如果要進一步客製化查詢樣式，可以參考
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/grid/paging/"
+    target="blank"
+  >
     Pager Template
   </a>
 </h4>
@@ -76,41 +115,63 @@
 </h3>
 <h4>
   - 設定 [sortable]="true" 或是 [sortable]="mySorter"，如下範例
-  <br>
-  - 設定 [sort]="[]" 或是 [sort]="sort"，如下範例
   <br />
-  - 提供自定義的事件 (sortChange) = "mySortChange($event)"
+  - 初始化 [sort]="[]" 或是 [sort]="sort"，如下範例
+  <br />
+  - [Optional] 提供自定義的事件 (sortChange) = "mySortChange($event)"
   <br />
 </h4>
 <mat-card class="source-code-card">
   <app-sort></app-sort>
 </mat-card>
 <h3>
+  分群
+</h3>
+<h4>
+  - [groupable] = true、[group] = "myGroup"
+  <br />
+  - [Optional] 提供自定義的事件 (groupChange) = "myGroupChange($event)"
+</h4>
+<mat-card class="source-code-card">
+  <app-group></app-group>
+</mat-card>
+<h3>
   PDF/Excel
 </h3>
 <h4>
   - 於AppModule中，加入PDFModule、ExcelModule
-  <br>
+  <br />
   - 加入PDF/Excel Component於 Kendo UI中，如上面的完整範例，其他設定值可以參考
-  <a href="https://www.telerik.com/kendo-angular-ui/components/grid/api/PDFComponent/" target="blank">
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/grid/api/PDFComponent/"
+    target="blank"
+  >
     PDF
   </a>
   、
-  <a href="https://www.telerik.com/kendo-angular-ui/components/grid/api/ExcelComponent/" target="blank">
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/grid/api/ExcelComponent/"
+    target="blank"
+  >
     Excel
   </a>
   <br />
   - 在Kendo UI的Toolbar中，加入PDF/Excel按鈕
   <br />
-  - 可以使用Kendo的excelExport接口，提供自已的Excel邏輯，如： (excelExport)="onExcelExport($event)" 可以參考
-  <a href="https://www.telerik.com/kendo-angular-ui/components/grid/export/excel-export/#toc-customizing-generated-workbooks"
-    target="blank">
+  - 可以使用Kendo的excelExport接口，提供自已的Excel邏輯，如：
+  (excelExport)="onExcelExport($event)" 可以參考
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/grid/export/excel-export/#toc-customizing-generated-workbooks"
+    target="blank"
+  >
     Export Excel
   </a>
   <br />
   - PDF更多的設計方式可以參考
-  <a href="https://www.telerik.com/kendo-angular-ui/components/grid/export/pdf-export/#toc-specifying-page-template"
-    target="blank">
+  <a
+    href="https://www.telerik.com/kendo-angular-ui/components/grid/export/pdf-export/#toc-specifying-page-template"
+    target="blank"
+  >
     PDF Template
   </a>
 </h4>

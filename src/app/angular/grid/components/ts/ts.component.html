@@ -397,6 +397,7 @@
             <span class="rty">FormControl</span>
             <span class="">(</span>
             <span class="atv">false</span>
+            <span class="">)</span>
         </div>
         <div class="m3">
             <span class="rty">{{ '});' }}</span>
@@ -513,13 +514,23 @@
             <span class="rty">{{ '});' }}</span>
         </div>
         <div class="code-annotation m3">
-            // 把設定好的Form驗證加入到新列中
+            // 把編輯的row index取出來，將Form驗證一同給Kendo UI
+        </div>
+        <div class="m3">
+            <span class="rty">this</span>
+            <span class="">.</span>
+            <span class="rty">editedRowIndex </span>
+            <span class="">= </span>
+            <span class="rty">rowIndex</span>
+            <span class="">;</span>
         </div>
         <div class="m3">
             <span class="rty">sender</span>
             <span class="">.</span>
-            <span class="rty">addRow</span>
+            <span class="rty">editRow</span>
             <span class="">(</span>
+            <span class="">rowIndex</span>
+            <span class="">, </span>
             <span class="">this</span>
             <span class="">.</span>
             <span class="">formGroup</span>
