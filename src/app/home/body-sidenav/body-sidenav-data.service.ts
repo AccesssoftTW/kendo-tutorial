@@ -39,16 +39,20 @@ export class BodySidenavDataService {
             name: 'Grid',
             route: '/angular/grid'
           },
+          {
+            name: '行事歷',
+            route: '/angular/scheduler'
+          },
         ]
       },
       {
         id: 3,
-        name: 'React',
+        name: 'Vue',
         lists: []
       },
       {
         id: 4,
-        name: 'Vue',
+        name: 'React',
         lists: []
       }
     ];

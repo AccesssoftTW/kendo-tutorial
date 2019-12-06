@@ -8,6 +8,7 @@ import { HomeComponent } from "./home/home.component";
 import { GridComponent } from "./jquery/grid/grid.component";
 import { ChartComponent } from "./jquery/chart/chart.component";
 import { AngularGridComponent } from './angular/grid/grid.component';
+import { AngularSchedulerComponent } from './angular/scheduler/scheduler.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -31,6 +32,7 @@ const routes: Routes = [
     children: [
       { path: "", redirectTo: "grid", pathMatch: "full" },
       { path: "grid", component: AngularGridComponent },
+      { path: "scheduler", component: AngularSchedulerComponent },
     ]
   }
 ];
@@ -43,4 +45,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

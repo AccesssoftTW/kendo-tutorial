@@ -11,7 +11,17 @@ import { SortComponent } from './components/sort/sort.component';
 import { GroupComponent } from './components/group/group.component';
 
 @NgModule({
-  declarations: [AngularGridComponent, HtmlComponent, TsComponent, ModuleComponent, ServiceComponent, ModelComponent, FilterComponent, SortComponent, GroupComponent],
+  declarations: [
+    AngularGridComponent,
+    HtmlComponent,
+    TsComponent,
+    ModuleComponent,
+    ServiceComponent,
+    ModelComponent,
+    FilterComponent,
+    SortComponent,
+    GroupComponent
+  ],
   imports: [AngularMaterialModule],
   exports: [AngularGridComponent]
 })
