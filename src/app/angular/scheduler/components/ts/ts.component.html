@@ -86,12 +86,368 @@
                     <span>public </span>
                     <span>selectedDate: </span>
                     <span class="rty">Date </span>
-                    <span class="rty">= </span>
+                    <span class="">= </span>
                     <span class="pun">new </span>
                     <span class="rty">Date</span>
                     <span class="rty">(</span>
                     <span class="pop">'2018-10-22T00:00:00'</span>
                     <span class="rty">);</span>
+                </div>
+                <div class="m2">
+                    <span>public </span>
+                    <span>formGroup: </span>
+                    <span class="rty">FormGroup</span>
+                    <span class="">;</span>
+                </div>
+                <div>
+                    <div class="m2">
+                        <span>public </span>
+                        <span>events: </span>
+                        <span class="rty">SchedulerEvent</span>
+                        <span class="">{{ '[ ] = [{' }}</span>
+                    </div>
+                    <div>
+                        <div class="m3">
+                            <span>id</span>
+                            <span>: </span>
+                            <span class="atv">1</span>
+                            <span>,</span>
+                        </div>
+                        <div class="m3">
+                            <span>title</span>
+                            <span>: </span>
+                            <span class="pop">'Breakfast'</span>
+                            <span>,</span>
+                        </div>
+                        <div class="m3">
+                            <span>start</span>
+                            <span>: </span>
+                            <span class="pun">new </span>
+                            <span class="rty">Date</span>
+                            <span>(</span>
+                            <span class="pop">'2018-10-22T09:00:00'</span>
+                            <span>)</span>
+                            <span>,</span>
+                        </div>
+                        <div class="m3">
+                            <span>end</span>
+                            <span>: </span>
+                            <span class="pun">new </span>
+                            <span class="rty">Date</span>
+                            <span>(</span>
+                            <span class="pop">'2018-10-22T09:30:00'</span>
+                            <span>)</span>
+                            <span>,</span>
+                        </div>
+                        <div class="m3">
+                            <span>recurrenceRule</span>
+                            <span>: </span>
+                            <span class="pop">'FREQ=DAILY;COUNT=5;'</span>
+                        </div>
+                    </div>
+                    <div class="m2">
+                        <span class="">{{ '}];' }}</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="m2">
+                        <span class="">constructor</span>
+                        <span class="">(</span>
+                        <span class="">private </span>
+                        <span class="">formBuilder</span>
+                        <span class="">: </span>
+                        <span class="rty">FormBuilder</span>
+                        <span class="">) </span>
+                        <span class="">{{ '{' }}</span>
+                    </div>
+                    <div class="m3">
+                        <span class="rty">this</span>
+                        <span class="rty">.</span>
+                        <span class="rty">createFormGroup </span>
+                        <span class="">= </span>
+                        <span class="rty">this</span>
+                        <span class="rty">.</span>
+                        <span class="rty">createFormGroup</span>
+                        <span class="rty">.</span>
+                        <span class="rty">bind</span>
+                        <span class="">(</span>
+                        <span class="rty">this</span>
+                        <span class="">);</span>
+                    </div>
+                    <div class="m2">
+                        <span class="rty">{{ '}' }}</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="m2">
+                        <span class="">public </span>
+                        <span class="rty">createFormGroup</span>
+                        <span class="">(</span>
+                        <span class="">args</span>
+                        <span class="">: </span>
+                        <span class="rty">CreateFormGroupArgs</span>
+                        <span class="">): </span>
+                        <span class="rty">FormGroup </span>
+                        <span class="">{{ '{' }}</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">const </span>
+                        <span class="rty">dataItem </span>
+                        <span class="">= </span>
+                        <span class="rty">args</span>
+                        <span class="">.</span>
+                        <span class="rty">dataItem</span>
+                        <span class="">;</span>
+                    </div>
+                    <div class="code-annotation m3">
+                        // 建立Form驗證
+                    </div>
+                    <div class="m3">
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">formGroup </span>
+                        <span class="">= </span>
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">formBuilder</span>
+                        <span class="">.</span>
+                        <span class="rty">group</span>
+                        <span class="">{{ '({' }}</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">id</span>
+                        <span class="">': </span>
+                        <span class="rty">args </span>
+                        <span class="">.</span>
+                        <span class="rty">isNew </span>
+                        <span class="pun">? </span>
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">getNextId</span>
+                        <span class="">() </span>
+                        <span class="">: </span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.id,</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">start</span>
+                        <span class="">': [</span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.start, </span>
+                        <span class="rty">Validators.required</span>
+                        <span class="">],</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">end</span>
+                        <span class="">': [</span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.end, </span>
+                        <span class="rty">Validators.required</span>
+                        <span class="">],</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">startTimezone</span>
+                        <span class="">': [</span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.startTimezone</span>
+                        <span class="">],</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">endTimezone</span>
+                        <span class="">': [</span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.endTimezone</span>
+                        <span class="">],</span>
+                    </div>
+
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">isAllDay</span>
+                        <span class="">': </span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.isAllDay</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">title</span>
+                        <span class="">': </span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.title</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">description</span>
+                        <span class="">': </span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.description</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">recurrenceRule</span>
+                        <span class="">': </span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.recurrenceRule</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">'</span>
+                        <span class="pop">recurrenceId</span>
+                        <span class="">': </span>
+                        <span class="rty">dataItem</span>
+                        <span class="">.recurrenceId</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">{{ '}, {' }}</span>
+                    </div>
+                    <div class="m4">
+                        <span class="">validator</span>
+                        <span class="">: </span>
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">startEndValidator</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">{{ '});' }}</span>
+                    </div>
+                    <div class="m3">
+                        <span class="pun">return </span>
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">formGroup</span>
+                        <span class="">;</span>
+                    </div>
+                    <div class="m2">
+                        <span class="rty">{{ '}' }}</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="m2">
+                        <span class="">public </span>
+                        <span class="rty">getNextId</span>
+                        <span class="">()</span>
+                        <span class="">: </span>
+                        <span class="pun">number </span>
+                        <span class="">{{ '{' }}</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">const </span>
+                        <span class="rty">len </span>
+                        <span class="">= </span>
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">events</span>
+                        <span class="">.length;</span>
+                    </div>
+                    <div class="m3">
+                        <span class="pun">return </span>
+                        <span class="">(</span>
+                        <span class="rty">len </span>
+                        <span class="pun">=== </span>
+                        <span class="atv">0</span>
+                        <span class="">) </span>
+                        <span class="pun">? </span>
+                        <span class="atv">1 </span>
+                        <span class="">: </span>
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">events</span>
+                        <span class="">[</span>
+                        <span class="rty">this</span>
+                        <span class="">.</span>
+                        <span class="rty">events</span>
+                        <span class="">.</span>
+                        <span class="">length </span>
+                        <span class="pun">- </span>
+                        <span class="atv">1 </span>
+                        <span class="">].id </span>
+                        <span class="pun">+ </span>
+                        <span class="atv">1</span>
+                        <span class="">;</span>
+                    </div>
+                    <div class="m2">
+                        <span class="">{{ '}' }}</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="m2">
+                        <span class="">public </span>
+                        <span class="rty">startEndValidator</span>
+                        <span class="">: </span>
+                        <span class="rty">ValidatorFn </span>
+                        <span class="pun">= </span>
+                        <span class="">(fg</span>
+                        <span class="">: </span>
+                        <span class="rty">FormGroup</span>
+                        <span class="">{{ ') => {' }}</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">const </span>
+                        <span class="rty">start </span>
+                        <span class="">= </span>
+                        <span class="rty">fg</span>
+                        <span class="pun">.</span>
+                        <span class="rty">get</span>
+                        <span class="">(</span>
+                        <span class="pop">'start'</span>
+                        <span class="">).value;</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">const </span>
+                        <span class="rty">end </span>
+                        <span class="">= </span>
+                        <span class="rty">fg</span>
+                        <span class="pun">.</span>
+                        <span class="rty">get</span>
+                        <span class="">(</span>
+                        <span class="pop">'end'</span>
+                        <span class="">).value;</span>
+                    </div>
+                    <div class="m3">
+                        <span class="pun">if </span>
+                        <span class="">(</span>
+                        <span class="rty">start </span>
+                        <span class="pun">!== </span>
+                        <span class="pun">null </span>
+                        <span class="pun">&& </span>
+                        <span class="rty">end </span>
+                        <span class="pun">!== </span>
+                        <span class="pun">null </span>
+                        <span class="pun">&& </span>
+                        <span class="rty">start</span>
+                        <span class="">.</span>
+                        <span class="rty">getTime</span>
+                        <span class="">() </span>
+                        <span class="pun">
+                            < </span> <span class="rty">end
+                        </span>
+                        <span class="">.</span>
+                        <span class="rty">getTime</span>
+                        <span class="">{{ '( )) {' }}</span>
+                    </div>
+                    <div class="m4">
+                        <span class="pun">return null;</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">{{ '} ' }}</span>
+                        <span class="pun">else </span>
+                        <span class="">{{ '{' }}</span>
+                    </div>
+                    <div class="m4">
+                        <span class="pun">return </span>
+                        <span class="">{{ '{ range: ' }}</span>
+                        <span class="pop">'End date must be greater than Start date' </span>
+                        <span class="">{{'};'}}</span>
+                    </div>
+                    <div class="m3">
+                        <span class="">{{ '}' }}</span>
+                    </div>
+                    <div class="m2">
+                        <span class="">{{ '}' }}</span>
+                    </div>
                 </div>
             </div>
             <div class="m1">
