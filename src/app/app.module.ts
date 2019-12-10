@@ -16,6 +16,7 @@ import { ChartModule } from './jquery/chart/chart.module';
 import { HttpClientModule } from '@angular/common/http';
 import { InstallGuideModule } from './jquery/install-guide/install-guide.module';
 import { AngularModule } from './angular/angular.module';
+import { VueModule } from './vue/vue.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AngularModule } from './angular/angular.module';
     ChartModule,
     InstallGuideModule,
     AngularModule,
+    VueModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
   ],

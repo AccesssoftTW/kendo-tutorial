@@ -9,6 +9,7 @@ import { GridComponent } from "./jquery/grid/grid.component";
 import { ChartComponent } from "./jquery/chart/chart.component";
 import { AngularGridComponent } from './angular/grid/grid.component';
 import { AngularSchedulerComponent } from './angular/scheduler/scheduler.component';
+import { VueGridComponent } from './vue/grid/grid.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -33,6 +34,15 @@ const routes: Routes = [
       { path: "", redirectTo: "grid", pathMatch: "full" },
       { path: "grid", component: AngularGridComponent },
       { path: "scheduler", component: AngularSchedulerComponent },
+    ]
+  },
+  {
+    path: "vue",
+    component: HomeComponent,
+    canActivate: [AuthGuardService],
+    children: [
+      { path: "", redirectTo: "grid", pathMatch: "full" },
+      { path: "grid", component: VueGridComponent },
     ]
   }
 ];

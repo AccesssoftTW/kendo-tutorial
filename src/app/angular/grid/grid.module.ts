@@ -23,6 +23,6 @@ import { GroupComponent } from './components/group/group.component';
     GroupComponent
   ],
   imports: [AngularMaterialModule],
-  exports: [AngularGridComponent]
+  exports: []
 })
 export class GridModule { }

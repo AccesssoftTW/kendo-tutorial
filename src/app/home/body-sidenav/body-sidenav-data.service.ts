@@ -48,7 +48,12 @@ export class BodySidenavDataService {
       {
         id: 3,
         name: 'Vue',
-        lists: []
+        lists: [
+          {
+            name: 'Grid',
+            route: '/vue/grid'
+          },
+        ]
       },
       {
         id: 4,
