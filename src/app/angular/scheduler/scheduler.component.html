@@ -30,3 +30,41 @@
         </mat-tab>
     </mat-tab-group>
 </mat-card>
+
+<h3>
+    啟用預設編輯
+</h3>
+<h4>
+    - 必要提供 kendoSchedulerReactiveEditing => Angular reactive form的驗證設定
+    <br>
+    - 做法可以參考下方圖示
+</h4>
+<img class="img-card" width="80%" src="assets/scheduler/kendo-scheduler-formgroup.png" />
+<h3>
+    其他相關操作
+</h3>
+<h4>
+    - 設定初始日期 [selectedDate]="selectedDate"
+    <br>
+    - 提供 kendoSchedulerBinding 已建立的行事歷資料
+    <br>
+    - 資料格式如下方圖示
+</h4>
+<img class="img-card" width="80%" src="assets/scheduler/kendo-scheduler-kendoSchedulerBinding.png" />
+<h3>
+    提供Kendo UI，自己定義的資料邏輯(service)
+</h3>
+<h4>
+    - 自己的service 繼承 Kendo UI提供的 BaseEditService
+    <br>
+    - 將資料來源改為service，並設定pipe為非同步。 [kendoSchedulerBinding]="editService.events | async"
+    <br>
+    - 一樣要提供 Angular reactive form。[kendoSchedulerReactiveEditing]="createFormGroup"
+    <br>
+    - [editService]="editService"
+    <br>
+    - [modelFields]="editService.fields"
+    <br>
+    - [loading]="editService.loading"
+    <br>
+</h4>
