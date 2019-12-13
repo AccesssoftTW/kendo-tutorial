@@ -12,9 +12,14 @@
     2. cd kendo-angular-scheduler
     <br />
     3. ng add @progress/kendo-angular-scheduler
+    <br>
+    4. 請先下載完整範例程式碼
+    <a target="blank" href="https://github.com/AccesssoftTW/kendo-angular-scheduler">
+        Github
+    </a>
 </h4>
 
-<h3>
+<!-- <h3>
     完整代碼
 </h3>
 <mat-card class="source-code-tab-card">
@@ -29,42 +34,111 @@
             <app-module></app-module>
         </mat-tab>
     </mat-tab-group>
-</mat-card>
-
+</mat-card> -->
 <h3>
-    啟用預設編輯
+    選擇要呈現樣式
 </h3>
 <h4>
-    - 必要提供 kendoSchedulerReactiveEditing => Angular reactive form的驗證設定
+    - 可以同時啟用不同的呈現樣式
     <br>
-    - 做法可以參考下方圖示
-</h4>
-<img class="img-card" width="80%" src="assets/scheduler/kendo-scheduler-formgroup.png" />
-<h3>
-    其他相關操作
-</h3>
-<h4>
     - 設定初始日期 [selectedDate]="selectedDate"
     <br>
-    - 提供 kendoSchedulerBinding 已建立的行事歷資料
+    - 你可以加入 startTime="08:00"、endTime="18:00" 設定工作時段
     <br>
-    - 資料格式如下方圖示
+    - 更多說明，請參考
+    <a target="blank" href="https://www.telerik.com/kendo-angular-ui/components/scheduler/views/">
+        這裡
+    </a>
+    <br>
 </h4>
-<img class="img-card" width="80%" src="assets/scheduler/kendo-scheduler-kendoSchedulerBinding.png" />
+<mat-card class="source-code-tab-card">
+    <mat-tab-group class="tab-source-code-background">
+        <mat-tab label="示例圖">
+            <img class="img-card" width="80%" src="assets/scheduler/kendo-scheduler-change-view.png" />
+        </mat-tab>
+        <mat-tab label="HTML">
+            <img class="img-card" width="60%" src="assets/scheduler/kendo-scheduler-view.png" />
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
 <h3>
-    提供Kendo UI，自己定義的資料邏輯(service)
+    如何啟用編輯
 </h3>
 <h4>
-    - 自己的service 繼承 Kendo UI提供的 BaseEditService
+    - 需要提供 Scheduler Form 驗證，所以要建立一個 FormGroup，並定義好我們的資料驗證格式
     <br>
-    - 將資料來源改為service，並設定pipe為非同步。 [kendoSchedulerBinding]="editService.events | async"
+    - 建立 Service 處理 Scheduler 的事件，以便我們處理資料邏輯，且要注意繼承 BaseEditService
     <br>
-    - 一樣要提供 Angular reactive form。[kendoSchedulerReactiveEditing]="createFormGroup"
+    - 需要定義好自己的行事歷資料欄位與 SchedulerModelFields 的對應關係，以利 Scheduler 識別我們的資料類型
     <br>
-    - [editService]="editService"
+    - 提供 loaging 控制參數，讓 Scheduler 可以有處理事件的動畫效果
     <br>
-    - [modelFields]="editService.fields"
+    - 將上述的程式碼準備完成，並提供給 Scheduler
     <br>
-    - [loading]="editService.loading"
+    - 更多的應用，可以參考
+    <a target="blank" href="https://www.telerik.com/kendo-angular-ui/components/scheduler/editing/editing-directives/">
+        這裡
+    </a>
+</h4>
+<mat-card class="source-code-tab-card">
+    <mat-tab-group class="tab-source-code-background">
+        <mat-tab label="Html">
+            <img class="img-card" width="60%" src="assets/scheduler/kendo-scheduler-html.png" />
+        </mat-tab>
+        <mat-tab label="FormGroup">
+            <img class="img-card" width="60%" src="assets/scheduler/kendo-scheduler-formgroup.png" />
+        </mat-tab>
+        <mat-tab label="Service">
+            <img class="img-card" width="60%" src="assets/scheduler/kendo-scheduler-service.png" />
+        </mat-tab>
+        <mat-tab label="SchedulerModelFields">
+            <img class="img-card" width="50%" src="assets/scheduler/kendo-scheduler-model-fields.png" />
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
+<h3>
+    時區該怎麼設定
+</h3>
+<h4>
+    - 先引入 Kendo 的時區包
+    <br>
+    - 設定 Scheduler 我們要固定時區
     <br>
 </h4>
+<mat-card class="source-code-tab-card">
+    <mat-tab-group class="tab-source-code-background">
+        <mat-tab label="引入時區">
+            <img class="img-card" width="60%" src="assets/scheduler/kendo-scheduler-timezone.png" />
+        </mat-tab>
+        <mat-tab label="HTML">
+            <img class="img-card" width="60%" src="assets/scheduler/kendo-scheduler-timezone-html.png" />
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
+<h3>
+    如果想要客製 Scheduler 上的事件樣式的話，該怎麼做
+</h3>
+<h4>
+    - 假設我們想要改變 "整天(AllDay)" 的事件樣式
+    <br>
+    - 在 kendo-scheduler 這個 component 中先引入 ng-template
+    <br>
+    - 引入 kendoSchedulerAllDayEventTemplate 這個 directive (不同的事件會有不同的directive)
+    <br>
+    - let-event="event" 把 Scheduler 的事件參數接出來
+    <br>
+    - 在 ng-template 中加入我們想要的事件樣式
+    <br>
+    - 更多的 template 可以參考
+    <a target="blank" href="https://www.telerik.com/kendo-angular-ui/components/scheduler/templates/">
+        這裡
+    </a>
+    <br>
+</h4>
+<mat-card class="source-code-tab-card">
+    <mat-tab-group class="tab-source-code-background">
+        <mat-tab label="ng-template">
+            <img class="img-card" width="60%" src="assets/scheduler/kendo-scheduler-template.png" />
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
