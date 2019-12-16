@@ -5,7 +5,7 @@
     style="text-decoration:none;"
     target="blank"
     >Kendo</a
-  >官方
+  >
 </h1>
 <img
   class="install-guide-photo"
@@ -34,88 +34,73 @@
   src="assets/install-guide/product-list.png"
 />
 <h1>
-  Step 5 :完成
+  Step 5 : 說明
 </h1>
-<h3 style="margin-left: 5%">
-  Kendo幫我們做了一些分類，可以根據需求利用 <br />
-  1. 可以參考apptemplates、examples來撰寫程式 <br />
-  2. 完整代碼主要放在js、styles中 <br />
-  3. 引入Typescript參照檔 <br />
-  4. 可以在src目錄中實作代碼
+<h3 class="m2">
+  下載後，會得到如圖中的一包程式碼
+  <br>
+  apptemplates - 可以提供快速建立一個專案版型的範例，或是當成參考
+  <br>
+  examples - 可以查看每個元件的範例，加快上手的時間
+  <br>
+  typescript - kendo 提供的 typescript 定義檔
+  <br>
+  src - 用戶可以在此建立一些測試案例
 </h3>
 <img
   class="install-guide-photo"
   width="70%"
   src="assets/install-guide/kendo-source.png"
 />
-<!-- <h1>Step 5 : 將檔案中需要的程式碼放到自已的專案中</h1>
-<h3 style="margin-left: 5%">我們稍後的教學會需要下面的幾個檔案</h3>
-<h4 style="margin-left: 5%">kendo.common.min.css</h4>
-<h4 style="margin-left: 5%">kendo.default-v2.min.css</h4>
-<h4 style="margin-left: 5%">jquery.min.js</h4>
-<h4 style="margin-left: 5%">kendo.all.min.js</h4>
+<h3 class="m2">
+  styles 的部份，可以選擇想要的主題包，以 kendo.default.min.css 為例
+  <br>
+  - kendo.common.min.css [基礎css]
+  <br>
+  - kendo.default.min.css [kendo 預設的主題包]
+  <br>
+  - kendo.default.mobile.min.css [針對不同裝置的預設主題包]
+  <br>
+  - 某些功能會需要多載入其他的 css 主題包
+  <br>
+  <br>
+  這邊建議可以將 styles 中的程式包先全部放入到自己專案中，並依需求載入需要的主題包
+  <br>
+  因為主題包中，會相依 styles 中的圖檔、字體檔等等，例如 loading 效果。
+</h3>
 <img
   class="install-guide-photo"
   width="70%"
-  src="assets/install-guide/kendo-source.png"
+  src="assets/install-guide/kendo-jquery-css.png"
 />
-<h1>Step 6 : 建立一個目錄如下</h1>
+<h3 class="m2">
+  js 的部份
+  <br>
+  - jquery.min.js
+  <br>
+  - kendo.all.min.js [kendo 全部的功能]
+  <br>
+  - 某些功能會需要多載入其他的 js
+  <br>
+  <br>
+  這邊建議可以依專案需求，看是否要載入整包 js 檔，但可能會增加前端程式包的大小
+  <br>
+  或是根據使用到的功能，依序載入需要用到的 js 檔，讓前端專案的大小得到充份的利用
+  <br>
+  例如：想要使用 Autocomplete 的功能，即載入 kendo.autocomplete.min.js
+</h3>
 <img
   class="install-guide-photo"
   width="70%"
-  src="assets/install-guide/demo-folder.png"
+  src="assets/install-guide/kendo-jquery-js.png"
 />
-<h1>Step 7 : 將套件引入到自已的專案中</h1>
-<mat-card class="source-code-card">
-  <div class="code-background">
-    <div>
-      <span class="tag"> <</span> <span class="tag">link </span>
-      <span class="atn">rel</span>
-      <span class="pun">=</span>
-      <span class="atv">"stylesheet" </span>
-      <span class="atn">href</span>
-      <span class="pun">=</span>
-      <span class="atv">"./asset/css/kendo.common.min.css"</span>
-      <span class="tag"> /></span>
-    </div>
-    <div>
-      <span class="tag"> <</span> <span class="tag">link </span>
-      <span class="atn">rel</span>
-      <span class="pun">=</span>
-      <span class="atv">"stylesheet" </span>
-      <span class="atn">href</span>
-      <span class="pun">=</span>
-      <span class="atv">"./asset/css/kendo.default-v2.min.css"</span>
-      <span class="tag"> /></span>
-    </div>
-    <div>
-      <span class="tag"> <</span> <span class="tag">script </span>
-      <span class="atn">src</span>
-      <span class="pun">=</span>
-      <span class="atv">"./asset/js/jquery.min.js"</span>
-      <span class="tag">></span>
-      <span class="tag"> <</span> <span class="tag">/script </span>
-      <span class="tag">></span>
-    </div>
-    <div>
-      <span class="tag"> <</span> <span class="tag">script </span>
-      <span class="atn">src</span>
-      <span class="pun">=</span>
-      <span class="atv">"./asset/js/kendo.all.min.js"</span>
-      <span class="tag">></span>
-      <span class="tag"> <</span> <span class="tag">/script </span>
-      <span class="tag">></span>
-    </div>
-    <div>
-      <span class="tag"> <</span> <span class="tag">title </span>
-      <span class="tag">></span>
-      <span>Kendo Practice</span>
-      <span class="tag"> <</span> <span class="tag">/title </span>
-      <span class="tag">></span>
-    </div>
-  </div>
-</mat-card> -->
-<!-- <h1 style="float: left">Step 8 : 繼續前進</h1>
-<button mat-fab color="warn" (click)="nextChapterClick()" style="margin-top: 15px; margin-left: 20px;">
-  <mat-icon>navigate_next</mat-icon>
-</button> -->
+<h1>觀迎進入 Kendo 的世界</h1>
+<h3 class="m2">
+  有些功能屬於正式版功能，但您可以開啟試用，使用看看 
+  <a
+    href="https://www.telerik.com/kendo-jquery-ui"
+    style="text-decoration:none;"
+    target="blank"
+    >Kendo UI</a
+  >
+</h3>
