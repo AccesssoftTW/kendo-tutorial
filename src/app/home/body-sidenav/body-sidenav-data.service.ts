@@ -43,6 +43,10 @@ export class BodySidenavDataService {
             name: '行事歷',
             route: '/angular/scheduler'
           },
+          {
+            name: '表單元件',
+            route: '/angular/input'
+          },
         ]
       },
       {

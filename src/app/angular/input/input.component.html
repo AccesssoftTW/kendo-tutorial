@@ -1,0 +1,76 @@
+<h3>
+    事前準備
+</h3>
+
+<h4>
+    這邊假設已經準備好
+    <a href="https://angular.io/guide/setup-local" style="text-decoration:none;" target="blank"> Angular</a>
+    開發環境 v6以上
+    <br />
+    1. ng new kendo-angular-inputs
+    <br />
+    2. cd kendo-angular-inputs
+    <br />
+    3. ng add @progress/kendo-angular-inputs
+    <br>
+    4. 請先下載完整範例程式碼
+    <a target="blank" style="text-decoration:none;" href="https://github.com/AccesssoftTW/kendo-angular-input">
+        Github
+    </a>
+</h4>
+
+<h3>
+    遮罩 - Textbox
+</h3>
+
+<h4>
+    <span class="atv">0</span>
+    <span> —必填數值 (0-9).</span>
+    <br>
+    <span class="atv">9</span>
+    <span> —必填數值 (0-9) 或空白.</span>
+    <br>
+    <span class="atv">#</span>
+    <span> —必填數值 (0-9) 或空白、符號 (+、-).</span>
+    <br>
+    <span class="atv">L</span>
+    <span> —必填文字 (a-Z).</span>
+    <br>
+    <span class="atv">?</span>
+    <span> —必填文字 (a-Z) or 或空白.</span>
+    <br>
+    <span class="atv">A</span>
+    <span> —必填字母、數字 (0-9, a-Z).</span>
+    <br>
+    <span class="atv">a</span>
+    <span> —必填字母、數字 (0-9, a-Z) 或空白.</span>
+    <br>
+    <span class="atv">&</span>
+    <span> —必填文字，除了空白.</span>
+    <br>
+    <span class="atv">C</span>
+    <span> —必填文字.</span>
+    <br>
+    <br>
+    - 如果有客製化的需要，可以依 Kendo 的格式建立遮罩，並提供給 rules 的 input 屬性
+    <br>
+    - 預設會開啟驗證模式(Validation)，可以設置 maskValidation 為 false 關閉
+    <br>
+    - 可以搭配
+    <a href="https://angular.io/guide/form-validation">Form Validation</a>
+    一起使用
+</h4>
+<mat-card class="source-code-tab-card">
+    <mat-tab-group class="tab-source-code-background">
+        <mat-tab label="HTML">
+            <img width="90%" src="assets/inputs/kendo-angular-masktextbox-html.png" />
+        </mat-tab>
+        <mat-tab label="TS">
+            <img width="70%" src="assets/inputs/kendo-angular-masktextbox-ts.png" />
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
+
+<h3>
+    數字 - Textbox
+</h3>

@@ -10,6 +10,7 @@ import { ChartComponent } from "./jquery/chart/chart.component";
 import { AngularGridComponent } from './angular/grid/grid.component';
 import { AngularSchedulerComponent } from './angular/scheduler/scheduler.component';
 import { VueGridComponent } from './vue/grid/grid.component';
+import { AngularInputComponent } from './angular/input/input.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -34,6 +35,7 @@ const routes: Routes = [
       { path: "", redirectTo: "grid", pathMatch: "full" },
       { path: "grid", component: AngularGridComponent },
       { path: "scheduler", component: AngularSchedulerComponent },
+      { path: "input", component: AngularInputComponent },
     ]
   },
   {
