@@ -57,6 +57,18 @@ export class BodySidenavDataService {
             name: 'Grid',
             route: '/vue/grid'
           },
+          {
+            name: '圖表',
+            route: '/vue/chart'
+          },
+          {
+            name: '表單',
+            route: '/vue/form'
+          },
+          {
+            name: '行事曆',
+            route: '/vue/scheduler'
+          },
         ]
       },
       {
