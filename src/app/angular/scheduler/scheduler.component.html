@@ -41,9 +41,9 @@
 <h4>
     - 可以同時啟用不同的呈現樣式
     <br>
-    - 設定初始日期 [selectedDate]="selectedDate"
+    - 設定初始日期 <code>[selectedDate]="selectedDate"</code>
     <br>
-    - 你可以加入 startTime="08:00"、endTime="18:00" 設定工作時段
+    - 你可以加入 <code>startTime="08:00"、endTime="18:00"</code> 設定工作時段
     <br>
     - 更多說明，請參考
     <a target="blank" style="text-decoration:none;" href="https://www.telerik.com/kendo-angular-ui/components/scheduler/views/">
@@ -65,13 +65,13 @@
     如何啟用編輯
 </h3>
 <h4>
-    - 需要提供 Scheduler Form 驗證，所以要建立一個 FormGroup，並定義好我們的資料驗證格式
+    - 需要提供 Scheduler Form 驗證，所以要建立一個 <code>FormGroup</code>，並定義好我們的資料驗證格式
     <br>
-    - 建立 Service 處理 Scheduler 的事件，以便我們處理資料邏輯，且要注意繼承 BaseEditService
+    - 建立 Service 處理 Scheduler 的事件，以便我們處理資料邏輯，且要注意繼承 <code>BaseEditService</code>
     <br>
-    - 需要定義好自己的行事歷資料欄位與 SchedulerModelFields 的對應關係，以利 Scheduler 識別我們的資料類型
+    - 需要定義好自己的行事歷資料欄位與 <code>SchedulerModelFields</code> 的對應關係，以利 Scheduler 識別我們的資料類型
     <br>
-    - 提供 loaging 控制參數，讓 Scheduler 可以有處理事件的動畫效果
+    - 提供 <code>loaging</code> 控制參數，讓 Scheduler 可以有處理事件的動畫效果
     <br>
     - 將上述的程式碼準備完成，並提供給 Scheduler
     <br>
@@ -123,9 +123,9 @@
     <br>
     - 在 kendo-scheduler 這個 component 中先引入 ng-template
     <br>
-    - 引入 kendoSchedulerAllDayEventTemplate 這個 directive (不同的事件會有不同的directive)
+    - 引入 <code>kendoSchedulerAllDayEventTemplate</code> 這個 directive (不同的事件會有不同的directive)
     <br>
-    - let-event="event" 把 Scheduler 的事件參數接出來
+    - <code>let-event="event"</code> 把 Scheduler 的事件參數接出來
     <br>
     - 在 ng-template 中加入我們想要的事件樣式
     <br>
@@ -142,3 +142,10 @@
         </mat-tab>
     </mat-tab-group>
 </mat-card>
+
+<h3>
+    想了解更多可以洽
+    <a target="blank" style="text-decoration:none;" href="https://www.telerik.com/kendo-angular-ui/components/scheduler/templates/">
+        群昱資訊
+    </a>
+</h3>
