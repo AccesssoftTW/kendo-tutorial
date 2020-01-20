@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GridModule } from './grid/grid.module';
 import { SchedulerModule } from './scheduler/scheduler.module';
 import { InputModule } from './input/input.module';
+import { ChartModule } from './chart/chart.module';
 
 @NgModule({
   declarations: [],
@@ -10,12 +11,14 @@ import { InputModule } from './input/input.module';
     CommonModule,
     GridModule,
     SchedulerModule,
-    InputModule
+    InputModule,
+    ChartModule
   ],
   exports: [
     GridModule,
     SchedulerModule,
-    InputModule
+    InputModule,
+    ChartModule
   ]
 })
 export class AngularModule { }

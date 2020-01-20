@@ -47,6 +47,10 @@ export class BodySidenavDataService {
             name: '表單元件',
             route: '/angular/input'
           },
+          {
+            name: '圖表',
+            route: '/angular/chart'
+          },
         ]
       },
       {
