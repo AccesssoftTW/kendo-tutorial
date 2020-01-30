@@ -82,4 +82,8 @@ export class BodySidenavDataService {
       }
     ];
   }
+
+  public getProductsList() {
+    return [{ text: "Kendo", value: "kendo" }, { text: "Infa", value: "infa" }]
+  }
 }

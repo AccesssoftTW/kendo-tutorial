@@ -14,6 +14,7 @@ export class BodySidenavComponent implements OnInit {
   public panelOpenState = true;
   private openingSubscription: Subscription;
   public sessionListDatas;
+  public productListDatas;
   @ViewChild("top", { static: true }) element: ElementRef;
 
   constructor(
@@ -39,7 +40,7 @@ export class BodySidenavComponent implements OnInit {
 
   init() {
     this.sessionListDatas = this._bodySidenavDataService.getSessionList();
-
+    this.productListDatas = this._bodySidenavDataService.getProductsList();
     this.openingSubscription = this._bodySidenavService.openingStatus.subscribe(
       x => {
         this.panelOpenState = x;

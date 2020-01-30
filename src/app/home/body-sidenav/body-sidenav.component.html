@@ -1,19 +1,20 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" mode="side" [opened]="panelOpenState">
+    <div style="margin-left: 5%;">
+      <mat-form-field>
+        <mat-select [(value)]="productListDatas[0].value">
+          <mat-option *ngFor="let productListData of productListDatas" [value]="productListData.value">
+            {{productListData.text}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <mat-list>
       <div *ngFor="let sessionListData of sessionListDatas">
         <h3 mat-subheader>{{ sessionListData.name }}</h3>
-        <mat-list-item
-          class="sidenav-list-item"
-          routerLinkActive="active-list-item"
-          *ngFor="let list of sessionListData.lists"
-        >
-          <a
-            class="sidenav-session-list"
-            routerLink="{{ list.route }}"
-            mat-line
-            >{{ list.name }}</a
-          >
+        <mat-list-item class="sidenav-list-item" routerLinkActive="active-list-item"
+          *ngFor="let list of sessionListData.lists">
+          <a class="sidenav-session-list" routerLink="{{ list.route }}" mat-line>{{ list.name }}</a>
         </mat-list-item>
         <mat-divider></mat-divider>
       </div>
