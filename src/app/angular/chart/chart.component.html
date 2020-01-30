@@ -31,19 +31,115 @@
     折線圖為例
 </h3>
 <h4>
-    - kendo-chart 為主要的 Component
+    - 主體大概分為三個部份
     <br>
-    - kendo-chart-title、kendo-chart-legend...等等，為 SubComponent，依需求加入
+    - kendo-chart 為主要的 Component，針對 Chart 的主體進行配置
     <br>
-    - kendo-chart-series 規劃線圖的呈現方式
+    - kendo-chart-title、kendo-chart-legend...等等，為 SubComponent，依功能需求加入
+    <br>
+    - kendo-chart-series 規劃線圖的呈現方式，如 Line、Bar、Area 等等
+    <br>
+    - 全部的 Components 可以參考<a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/"
+        style="text-decoration:none;" target="blank">這裡</a>
 </h4>
 <mat-card class="source-code-tab-card">
     <mat-tab-group class="tab-source-code-background">
         <mat-tab label="成品">
             <img width="80%" src="assets/chart/angular-chart.png" />
         </mat-tab>
-        <mat-tab label="程式">
+        <mat-tab label="HTML範例">
             <img width="90%" src="assets/chart/angular-chart-html.png" />
         </mat-tab>
     </mat-tab-group>
 </mat-card>
+<h3>
+    主體 Kendo-Chart 常用的參數設定
+</h3>
+<h4>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/AxisDefaults/"
+            style="text-decoration:none;" target="blank">
+            axisDefaults</a></code>
+    可以針對 SubComponent (categoryAxis、valueAxis、xAxis、yAxis) 優先設定預設值
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/CategoryAxis/"
+            style="text-decoration:none;" target="blank">
+            categoryAxis</a></code>
+    針對分類軸線進行設定，比如單位、顏色、最大值、最小值等等
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/ChartArea/"
+            style="text-decoration:none;" target="blank">
+            chartArea</a></code>
+    對 Area 類型的 Chart 進行定義
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/Legend/"
+            style="text-decoration:none;" target="blank">
+            legend</a></code>
+    針對圖例的顯示，設定位置、高度、寬度等等
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/SeriesDefaults/"
+            style="text-decoration:none;" target="blank">
+            seriesDefaults</a></code>
+    針對要呈現的數列進行預設值的設定
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/Series/"
+            style="text-decoration:none;" target="blank">
+            series</a></code>
+    針對要呈現的數列進行設定，如果某些參數未設定，即會參照 seriesDefaults 的預設值，或是套件本身的預設值
+    <br>
+    - 更多的設定請參考<a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/ChartComponent/"
+        style="text-decoration:none;" target="blank">
+        這裡</a>
+    <br>
+</h4>
+<h3>
+    Kendo-Chart 裡常用的元件
+</h3>
+<h4>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/Title/"
+            style="text-decoration:none;" target="blank">
+            kendo-chart-title</a></code>
+    圖表標題的文字設定
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/Legend/"
+            style="text-decoration:none;" target="blank">
+            kendo-chart-legend</a></code>
+    圖例的顯示設定
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/TooltipComponent/"
+            style="text-decoration:none;" target="blank">
+            kendo-chart-tooltip</a></code>
+    文字提示
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/ValueAxisComponent/"
+            style="text-decoration:none;" target="blank">
+            kendo-chart-value-axis</a></code>
+    是 kendo-chart-value-axis-item 的集合
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/ValueAxis/"
+            style="text-decoration:none;" target="blank">
+            kendo-chart-value-axis-item</a></code>
+    針對要呈現的值，進行配置，例如：<code>type = "line" data = "[1, 2, 3]"</code> 等等
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/SeriesComponent/"
+            style="text-decoration:none;" target="blank">
+            kendo-chart-series</a></code>
+    kendo-chart-series-item 的集合
+    <br>
+    - <code><a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/SeriesItemComponent/"
+            style="text-decoration:none;" target="blank">
+            kendo-chart-series-item</a></code>
+    針對圖表的呈現設定，外觀、線圖或方塊圖等等
+    <br>
+    - 更多可以參考<a href="https://www.telerik.com/kendo-angular-ui/components/charts/api/" style="text-decoration:none;"
+        target="blank">這裡</a>
+</h4>
+<h3>
+    更多說明
+</h3>
+<h4>
+    因為 Angular 語言特性的關係，Kendo 也不外乎的將每一個 Chart 的功能，拆分成數個 Components，
+    <br>
+    在使用上，跟傳統的 Jquery 用法上較不相同，透過增加 selector 的方式，組合使用
+    <br>
+    並透過文件查詢得知有哪些 input 參數可以使用，或是 event 可以觸發。
+</h4>
