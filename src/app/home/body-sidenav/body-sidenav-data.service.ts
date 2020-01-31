@@ -93,20 +93,30 @@ export class BodySidenavDataService {
         id: 1,
         name: 'Jquery',
         lists: [
+          {
+            name: '準備中',
+            route: ''
+          },
         ]
       },
       {
         id: 2,
         name: 'Angular',
         lists: [
-
+          {
+            name: '準備中',
+            route: ''
+          },
         ]
       },
       {
         id: 3,
         name: 'Vue',
         lists: [
-
+          {
+            name: '準備中',
+            route: ''
+          },
         ]
       }
     ];
