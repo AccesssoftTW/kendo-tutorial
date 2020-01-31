@@ -7,7 +7,7 @@ export class BodySidenavDataService {
 
   constructor() { }
 
-  public getSessionList() {
+  public getKendoList() {
     return [
       {
         id: 1,
@@ -84,6 +84,31 @@ export class BodySidenavDataService {
   }
 
   public getProductsList() {
-    return [{ text: "Kendo", value: "kendo" }, { text: "Infa", value: "infa" }]
+    return [{ text: "Kendo", value: "kendo" }, { text: "Infragistics", value: "infragistics" }]
+  }
+
+  public getInfragisticsList() {
+    return [
+      {
+        id: 1,
+        name: 'Jquery',
+        lists: [
+        ]
+      },
+      {
+        id: 2,
+        name: 'Angular',
+        lists: [
+
+        ]
+      },
+      {
+        id: 3,
+        name: 'Vue',
+        lists: [
+
+        ]
+      }
+    ];
   }
 }
