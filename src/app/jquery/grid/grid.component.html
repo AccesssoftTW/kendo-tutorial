@@ -50,18 +50,10 @@
       <span>相關連結：</span>
     </li>
     <li>
-      <a
-        href="https://demos.telerik.com/kendo-ui/grid/local-data-binding"
-        target="_blank"
-        >Local Data</a
-      >
+      <a href="https://demos.telerik.com/kendo-ui/grid/local-data-binding" target="_blank">Local Data</a>
     </li>
     <li>
-      <a
-        href="https://demos.telerik.com/kendo-ui/grid/remote-data-binding"
-        target="_blank"
-        >Remote Data</a
-      >
+      <a href="https://demos.telerik.com/kendo-ui/grid/remote-data-binding" target="_blank">Remote Data</a>
     </li>
   </ul>
 </h4>
@@ -105,18 +97,12 @@
       <span>相關連結：</span>
     </li>
     <li>
-      <a
-        href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid/configuration/columns"
-        target="_blank"
-        >Columns</a
-      >
+      <a href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid/configuration/columns"
+        target="_blank">Columns</a>
     </li>
     <li>
-      <a
-        href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid/configuration/datasource"
-        target="_blank"
-        >Datasource</a
-      >
+      <a href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid/configuration/datasource"
+        target="_blank">Datasource</a>
     </li>
   </ul>
 </h4>
@@ -152,10 +138,7 @@
       <span>相關連結：</span>
     </li>
     <li>
-      <a
-        href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid"
-        target="_blank"
-      >
+      <a href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid" target="_blank">
         Grid
       </a>
     </li>
@@ -173,18 +156,12 @@
       <span>相關連結：</span>
     </li>
     <li>
-      <a
-        href="https://demos.telerik.com/kendo-ui/grid/excel-export"
-        target="_blank"
-      >
+      <a href="https://demos.telerik.com/kendo-ui/grid/excel-export" target="_blank">
         Excel
       </a>
     </li>
     <li>
-      <a
-        href="https://demos.telerik.com/kendo-ui/grid/pdf-export"
-        target="_blank"
-      >
+      <a href="https://demos.telerik.com/kendo-ui/grid/pdf-export" target="_blank">
         PDF
       </a>
     </li>
@@ -195,17 +172,13 @@
   <app-grid-pdf></app-grid-pdf>
 </mat-card>
 <h3>成品</h3>
-<img class="install-guide-photo" width="70%" src="assets/grid/grid.png" />
-<h3>完整代碼</h3>
 <h4 style="margin-left: 5%">
   我們也將程式放上了
-  <a
-    style="text-decoration: none;"
-    href="https://github.com/AccesssoftTW/kendo-jquery-grid"
-    >GITHUB</a
-  >
+  <a style="text-decoration: none;" href="https://github.com/AccesssoftTW/kendo-jquery-grid">GITHUB</a>
 </h4>
-<mat-card class="source-code-tab-card">
+<img class="install-guide-photo" width="70%" src="assets/grid/grid.png" />
+
+<!-- <mat-card class="source-code-tab-card">
   <mat-tab-group class="tab-source-code-background">
     <mat-tab label="index.html">
       <app-pre-request-html></app-pre-request-html>
@@ -217,4 +190,53 @@
       <app-pre-request-data></app-pre-request-data>
     </mat-tab>
   </mat-tab-group>
+</mat-card> -->
+<h3>常用的事件</h3>
+<h4 style="margin-left: 5%">
+  在對應的屬性加上寫好的 function callback，即會在對應的時間點觸發
+  <br>
+  - dataBinding - 在資料繫結之前觸發
+  <br>
+  - dataBound - 在資料繫結時觸發
+  <br>
+  - change - 在選取 grid 中的某列、欄時觸發
+  <br>
+  - save - 單筆存檔時觸發
+  <br>
+  - saveChanges - 批次存檔時觸發
+  <br>
+  - edit - 新增、編輯資料時觸發
+  <br>
+  <a style="text-decoration: none;" href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid">更多請看這裡</a>
+</h4>
+<mat-card class="source-code-tab-card">
+  <mat-tab-group class="tab-source-code-background">
+    <mat-tab label="初始化前綁定事件範例">
+      <img width="60%" src="assets/grid/data-binding-before.png" />
+    </mat-tab>
+    <mat-tab label="初始化後綁定事件範例">
+      <img width="70%" src="assets/grid/data-binding-after.png" />
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+<h3>常用的方法</h3>
+<h4 style="margin-left: 5%">
+  透過 selector 取得 grid 元素後調用欲使用的方法
+  <br>
+  - addRow - 插入一筆資料 (限 inline、incell 模式)
+  <br>
+  - editRow - 讓指定的 row 轉成 edit 模式 (限 inline、incell 模式)
+  <br>
+  - items - 取得目前 grid 上的所有資料樣本
+  <br>
+  - refresh - 對當前的 grid 中的資料(items)進行重新整理
+  <br>
+  - cancelChanges - 通常在批次處理(Batch)的模式下調用，可以 rollback 所有變更
+  <br>
+  - select - 取得或設置被選取的 rows、cells
+  <br>
+  <a style="text-decoration: none;" href="https://docs.telerik.com/kendo-ui/api/javascript/ui/grid">更多請看這裡</a>
+</h4>
+<mat-card class="source-code-tab-card">
+  <img width="60%" src="assets/grid/grid-methods.png" />
 </mat-card>
