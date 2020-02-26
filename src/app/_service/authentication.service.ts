@@ -83,7 +83,7 @@ export class AuthenticationService {
             this.router.navigate([redirectUrl]);
           },
           err => {
-            alert(err);
+            alert(err.error.result);
           }
         );
       },

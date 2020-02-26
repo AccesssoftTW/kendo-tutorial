@@ -13,37 +13,44 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RegisterFormModule } from "./jquery/register-form/register-form.module";
 import { GridModule } from "./jquery/grid/grid.module";
 import { ChartModule } from './jquery/chart/chart.module';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 import { InstallGuideModule } from './jquery/install-guide/install-guide.module';
 import { AngularModule } from './angular/angular.module';
 import { VueModule } from './vue/vue.module';
+import { MemberModule } from './admin/member/member.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderToolbarComponent,
-    BodySidenavComponent,
-    LoginComponent,
-    HomeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AppRoutingModule,
-    AngularMaterialModule,
-    LoadingProgressModule,
-    RegisterFormModule,
-    GridModule,
-    ChartModule,
-    InstallGuideModule,
-    AngularModule,
-    VueModule,
-    // import HttpClientModule after BrowserModule.
-    HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderToolbarComponent,
+		BodySidenavComponent,
+		LoginComponent,
+		HomeComponent,
+	],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		ReactiveFormsModule,
+		FormsModule,
+		AppRoutingModule,
+		AngularMaterialModule,
+		LoadingProgressModule,
+		RegisterFormModule,
+		GridModule,
+		ChartModule,
+		InstallGuideModule,
+		AngularModule,
+		VueModule,
+		MemberModule
+		// import HttpClientModule after BrowserModule.
+		// HttpClientModule
+	],
+	providers: [
+
+	],
+	bootstrap: [
+		AppComponent
+	]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -15,6 +15,7 @@ import { VueChartComponent } from './vue/chart/chart.component';
 import { VueFormComponent } from './vue/form/form.component';
 import { VueSchedulerComponent } from './vue/scheduler/scheduler.component';
 import { AngularChartComponent } from './angular/chart/chart.component';
+import { MemberComponent } from './admin/member/member.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" },
@@ -54,7 +55,16 @@ const routes: Routes = [
       { path: "form", component: VueFormComponent },
       { path: "scheduler", component: VueSchedulerComponent },
     ]
-  }
+  },
+  {
+    path: "admin",
+    component: HomeComponent,
+    canActivate: [AuthGuardService],
+    children: [
+      { path: "", redirectTo: "member", pathMatch: "full" },
+      { path: "member", component: MemberComponent },
+    ]
+  },
 ];
 
 @NgModule({
