@@ -1,25 +1,24 @@
-<div class="sample-wrapper">
-    <igx-grid #gridRowEditTransaction [data]="data" [primaryKey]="'ID'" [rowEditable]="true" [showToolbar]="true" (onRowEdit)="EditDone($event)">
+<div class="use-flexbox">
+    <igx-grid #gridRowEditTransaction [data]="data" [primaryKey]="'ID'" [rowEditable]="true" [allowFiltering]="true"
+        [showToolbar]="true" (onRowEdit)="EditDone($event)" [paging]="true" [perPage]="5">
         <ng-template igxToolbarCustomContent let-grid="grid">
             <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="AddRow()">
                 <igx-icon fontSet="material">add</igx-icon>
                 新增
             </button>
-            <!-- <button igxButton="flat" igxRipple igxRippleCentered="true" (click)="Save()">
-                <igx-icon fontSet="material">check</igx-icon>
-                存檔
-            </button> -->
         </ng-template>
-        <igx-column field="ID" header="id" editable="false"></igx-column>
-        <igx-column field="name" header="姓名" [dataType]="'string'"></igx-column>
-        <igx-column field="account" header="帳號" [dataType]="'string'"></igx-column>
-        <igx-column field="password" header="密碼" [dataType]="'string'"></igx-column>
-        <igx-column field="expire_at" header="過期日" [dataType]="'date'"></igx-column>
-        <igx-column field="phone_number" header="電話" [dataType]="'string'"></igx-column>
+        <igx-column field="ID" header="id" editable="false" sortable="true" [filterable]="false"></igx-column>
+        <igx-column field="name" header="姓名" [dataType]="'string'" sortable="true"></igx-column>
+        <igx-column field="account" header="帳號" [dataType]="'string'" sortable="true"></igx-column>
+        <igx-column field="password" header="密碼" [dataType]="'string'" sortable="true"></igx-column>
+        <igx-column field="expire_at" header="過期日" [dataType]="'date'" sortable="true"></igx-column>
+        <igx-column field="phone_number" header="電話" [dataType]="'string'" sortable="true"></igx-column>
         <igx-column [pinned]="true" [filterable]="false" [editable]="false">
             <ng-template igxCell let-cell="cell" let-val>
                 <button igxButton (click)="DeleteRow(cell.cellID.rowID)" [disabled]="cell.row.deleted">Delete</button>
             </ng-template>
         </igx-column>
     </igx-grid>
+
+    <!-- <div class="inside">AAAAAA</div> -->
 </div>

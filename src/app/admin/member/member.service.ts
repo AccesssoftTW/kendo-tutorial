@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { User } from './user';
@@ -14,51 +14,23 @@ export class MemberService {
   getAllUser(): Observable<any> {
     const url = environment.backendDomain + "/api/v1/user/get";
 
-    // 放置token在header
-    const httpOptions = {
-      headers: new HttpHeaders({
-        auth_token: JSON.parse(localStorage.getItem("token")).auth_token
-      })
-    };
-
-    return this.http.get(url, httpOptions);
+    return this.http.get(url);
   }
 
   addUser(userEntity: User): Observable<any> {
     const url = environment.backendDomain + "/api/v1/user/add";
 
-    // 放置token在header
-    const httpOptions = {
-      headers: new HttpHeaders({
-        auth_token: JSON.parse(localStorage.getItem("token")).auth_token
-      })
-    };
-
-    return this.http.post(url, userEntity, httpOptions);
+    return this.http.post(url, userEntity);
   }
 
   updateUser(userEntity: User): Observable<any> {
     const url = environment.backendDomain + "/api/v1/user/update";
 
-    // 放置token在header
-    const httpOptions = {
-      headers: new HttpHeaders({
-        auth_token: JSON.parse(localStorage.getItem("token")).auth_token
-      })
-    };
-
-    return this.http.put(url, userEntity, httpOptions);
+    return this.http.put(url, userEntity);
   }
   deleteUser(id: string): Observable<any> {
     const url = environment.backendDomain + `/api/v1/user/delete/${id}`;
 
-    // 放置token在header
-    const httpOptions = {
-      headers: new HttpHeaders({
-        auth_token: JSON.parse(localStorage.getItem("token")).auth_token
-      })
-    };
-
-    return this.http.delete(url, httpOptions);
+    return this.http.delete(url);
   }
 }

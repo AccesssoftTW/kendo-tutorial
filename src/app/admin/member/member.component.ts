@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { IgxGridComponent, SortingDirection } from 'igniteui-angular';
 import { MemberService } from './member.service';
 import { User } from './user';
 @Component({
@@ -7,7 +7,7 @@ import { User } from './user';
   templateUrl: './member.component.html',
   styleUrls: ['./member.component.scss']
 })
-export class MemberComponent implements OnInit {
+export class MemberComponent implements OnInit, AfterViewInit {
 
   @ViewChild('gridRowEdit', { read: IgxGridComponent, static: false }) public gridRowEdit: IgxGridComponent;
   @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: false }) grid: IgxGridComponent;
@@ -17,8 +17,12 @@ export class MemberComponent implements OnInit {
   constructor(private memberService: MemberService) {
 
   }
+  ngAfterViewInit(): void {
+    this.grid.sort({ fieldName: 'ID', dir: SortingDirection.Asc, ignoreCase: false });
 
+  }
   ngOnInit() {
+
     this.memberService.getAllUser().subscribe(
       users => {
         users.forEach(x => {

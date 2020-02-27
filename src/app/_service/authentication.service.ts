@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
 import { User } from "../_model/user";
 import { Observable } from "rxjs/internal/Observable";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { Token } from "../_model/token";
 import { Result } from "../_model/result";
@@ -62,16 +62,8 @@ export class AuthenticationService {
         // Token取得成功，呼叫API拿取用戶資訊
         const userUrl = environment.backendDomain + "/api/v1/auth/user";
 
-        // 放置token在header
-        const httpOptions = {
-          headers: new HttpHeaders({
-            "Content-Type": "application/json",
-            auth_token: tokenData.auth_token
-          })
-        };
-
         // 呼叫取得User的API
-        this.http.get<User>(userUrl, httpOptions).subscribe(
+        this.http.get<User>(userUrl).subscribe(
           (userData: User) => {
             // 把user寫到暫存區
             localStorage.setItem("currentUser", JSON.stringify(userData));
@@ -97,5 +89,6 @@ export class AuthenticationService {
   logout() {
     localStorage.removeItem("currentUser");
     this.currentUserSubject.next(null);
+    this.router.navigate(['login']);
   }
 }

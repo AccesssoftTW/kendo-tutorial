@@ -16,7 +16,8 @@ export class BodySidenavComponent implements OnInit {
   public sessionListDatas;
   public productListDatas;
   public infragisticsListDatas;
-  public selectedProduct;
+  public adminDatas;
+  public selectedProduct = '';
   @ViewChild("top", { static: true }) element: ElementRef;
 
   constructor(
@@ -44,8 +45,10 @@ export class BodySidenavComponent implements OnInit {
     this.sessionListDatas = this._bodySidenavDataService.getKendoList();
     this.productListDatas = this._bodySidenavDataService.getProductsList();
     this.infragisticsListDatas = this._bodySidenavDataService.getInfragisticsList();
-    
+    this.adminDatas = this._bodySidenavDataService.getAdminList();
+
     this.selectedProduct = this.productListDatas[0].value;
+
     this.openingSubscription = this._bodySidenavService.openingStatus.subscribe(
       x => {
         this.panelOpenState = x;

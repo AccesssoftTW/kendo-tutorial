@@ -30,6 +30,16 @@
         <mat-divider></mat-divider>
       </div>
     </mat-list>
+    <mat-list *ngIf="selectedProduct == 'admin'">
+      <div *ngFor="let adminData of adminDatas">
+        <h3 mat-subheader>{{ adminData.name }}</h3>
+        <mat-list-item class="sidenav-list-item" routerLinkActive="active-list-item"
+          *ngFor="let list of adminData.lists">
+          <a class="sidenav-session-list" routerLink="{{ list.route }}" mat-line>{{ list.name }}</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content>

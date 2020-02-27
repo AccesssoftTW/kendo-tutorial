@@ -13,20 +13,31 @@ export class AuthGuardService {
     private authenticationService: AuthenticationService
   ) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return true; 
-    // if (environment.production){
+    // return true; 
+    // if (environment.production) {
     //   const currentUser = this.authenticationService.currentUserValue;
     //   if (currentUser) {
     //     // logged in so return true
     //     return true;
     //   }
-  
+
     //   // not logged in so redirect to login page with the return url
     //   this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
     //   return false;
     // } else {
     //   return true;
     // }
-    
+
+
+    const currentUser = this.authenticationService.currentUserValue;
+    if (currentUser) {
+      // logged in so return true
+      return true;
+    }
+
+    // not logged in so redirect to login page with the return url
+    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+    return false;
+
   }
 }

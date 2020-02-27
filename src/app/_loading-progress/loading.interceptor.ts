@@ -3,6 +3,7 @@ import { LoadingProgressService } from './loading-progress.service';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { finalize } from 'rxjs/operators';
+import { AuthenticationService } from '../_service/authentication.service';
 
 @Injectable()
 export class LoadingProgressInterceptor implements HttpInterceptor {
@@ -13,7 +14,7 @@ export class LoadingProgressInterceptor implements HttpInterceptor {
     '/authrefresh',
   ];
 
-  constructor(private loadingScreenService: LoadingProgressService) {
+  constructor(private loadingScreenService: LoadingProgressService, private authenticationService: AuthenticationService) {
   }
 
   public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -26,13 +27,15 @@ export class LoadingProgressInterceptor implements HttpInterceptor {
       }
     }
 
+    const newRequest = request.clone({ setHeaders: { auth_token: this.authenticationService.tokenValue.auth_token } });
+
     if (displayLoadingScreen) {
       if (this.activeRequests === 0) {
         this.loadingScreenService.startLoading();
       }
       this.activeRequests++;
 
-      return next.handle(request).pipe(
+      return next.handle(newRequest).pipe(
         finalize(() => {
           this.activeRequests--;
           if (this.activeRequests === 0) {
@@ -41,7 +44,7 @@ export class LoadingProgressInterceptor implements HttpInterceptor {
         }
         ));
     } else {
-      return next.handle(request);
+      return next.handle(newRequest);
     }
   }
 }
