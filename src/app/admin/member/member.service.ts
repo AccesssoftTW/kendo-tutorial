@@ -36,4 +36,29 @@ export class MemberService {
 
     return this.http.post(url, userEntity, httpOptions);
   }
+
+  updateUser(userEntity: User): Observable<any> {
+    const url = environment.backendDomain + "/api/v1/user/update";
+
+    // 放置token在header
+    const httpOptions = {
+      headers: new HttpHeaders({
+        auth_token: JSON.parse(localStorage.getItem("token")).auth_token
+      })
+    };
+
+    return this.http.put(url, userEntity, httpOptions);
+  }
+  deleteUser(id: string): Observable<any> {
+    const url = environment.backendDomain + `/api/v1/user/delete/${id}`;
+
+    // 放置token在header
+    const httpOptions = {
+      headers: new HttpHeaders({
+        auth_token: JSON.parse(localStorage.getItem("token")).auth_token
+      })
+    };
+
+    return this.http.delete(url, httpOptions);
+  }
 }

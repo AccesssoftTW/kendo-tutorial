@@ -10,7 +10,6 @@ import { User } from './user';
 export class MemberComponent implements OnInit {
 
   @ViewChild('gridRowEdit', { read: IgxGridComponent, static: false }) public gridRowEdit: IgxGridComponent;
-  // @ViewChild("#gridRowEditTransaction", {}) public grid: IgxGridComponent;
   @ViewChild('gridRowEditTransaction', { read: IgxGridComponent, static: false }) grid: IgxGridComponent;
 
   public data: any[];
@@ -26,6 +25,9 @@ export class MemberComponent implements OnInit {
           x.expire_at = new Date(x.expire_at);
         });
         this.data = users;
+      },
+      err => {
+        alert(err.error.result);
       }
     );
 
@@ -45,11 +47,16 @@ export class MemberComponent implements OnInit {
 
   EditDone(e) {
 
-    console.log(e);
     if (e.rowID) {
 
+      this.memberService.updateUser(e.newValue).subscribe(
+        (user: User) => {
+        },
+        err => {
+          alert(err.error.result);
+        }
+      );
     } else {
-      console.log(e.newValue);
 
       this.memberService.addUser(e.newValue).subscribe(
         (user: User) => {
@@ -61,9 +68,24 @@ export class MemberComponent implements OnInit {
             }
           });
 
+        },
+        err => {
+          alert(err.error.result);
         }
       );
     }
+  }
+
+  public DeleteRow(rowID) {
+    this.memberService.deleteUser(rowID).subscribe(
+      () => {
+        this.grid.deleteRow(rowID);
+      },
+      err => {
+        alert(err.error.result);
+      }
+    );
+
   }
 
 }

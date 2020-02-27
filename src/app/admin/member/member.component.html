@@ -16,5 +16,10 @@
         <igx-column field="password" header="密碼" [dataType]="'string'"></igx-column>
         <igx-column field="expire_at" header="過期日" [dataType]="'date'"></igx-column>
         <igx-column field="phone_number" header="電話" [dataType]="'string'"></igx-column>
+        <igx-column [pinned]="true" [filterable]="false" [editable]="false">
+            <ng-template igxCell let-cell="cell" let-val>
+                <button igxButton (click)="DeleteRow(cell.cellID.rowID)" [disabled]="cell.row.deleted">Delete</button>
+            </ng-template>
+        </igx-column>
     </igx-grid>
 </div>
