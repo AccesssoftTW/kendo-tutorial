@@ -18,6 +18,7 @@ import { InstallGuideModule } from './jquery/install-guide/install-guide.module'
 import { AngularModule } from './angular/angular.module';
 import { VueModule } from './vue/vue.module';
 import { MemberModule } from './admin/member/member.module';
+import { ContactInfoComponent } from './home/contact-info/contact-info.component';
 
 @NgModule({
 	declarations: [
@@ -26,6 +27,7 @@ import { MemberModule } from './admin/member/member.module';
 		BodySidenavComponent,
 		LoginComponent,
 		HomeComponent,
+		ContactInfoComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -44,6 +46,9 @@ import { MemberModule } from './admin/member/member.module';
 		MemberModule
 		// import HttpClientModule after BrowserModule.
 		// HttpClientModule
+	],
+	entryComponents: [
+		ContactInfoComponent
 	],
 	providers: [
 

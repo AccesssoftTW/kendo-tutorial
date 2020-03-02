@@ -27,7 +27,10 @@ export class LoadingProgressInterceptor implements HttpInterceptor {
       }
     }
 
-    const newRequest = request.clone({ setHeaders: { auth_token: this.authenticationService.tokenValue.auth_token } });
+    let newRequest = request;
+    if (this.authenticationService.tokenValue) {
+      newRequest = request.clone({ setHeaders: { auth_token: this.authenticationService.tokenValue.auth_token } });
+    }
 
     if (displayLoadingScreen) {
       if (this.activeRequests === 0) {

@@ -1,1 +1,93 @@
-<p>還在加緊趕工中...</p>
+<h3>
+    事前準備
+</h3>
+
+<h4>
+    這邊假設已經準備好
+    <a href="https://vuejs.org/v2/guide/installation.html" style="text-decoration:none;" target="blank"> Vue</a>
+    開發環境 3.x版以上
+    <br />
+    1. vue create kendo-vue-chart
+    <br />
+    2. cd kendo-vue-chart
+    <br />
+    3. npm install --save @progress/kendo-ui
+    <br />
+    4. npm install --save @progress/kendo-theme-default
+    <br />
+    5. npm install --save @progress/kendo-charts-vue-wrapper
+    <br>
+    6. 請先下載完整範例程式碼
+    <a target="blank" style="text-decoration:none;" href="https://github.com/AccesssoftTW/kendo-vue-chart">
+        Github
+    </a>
+</h4>
+
+<h3>
+    示例圖
+</h3>
+
+<div>
+    <img width="60%" src="assets/chart/chart-category.png" />
+</div>
+
+<h3>
+    長條圖為例
+</h3>
+<h4>
+    - 主體維持Vue的特性使用v-bind，綁在 HTML 上的屬性若希望能與 vue instance 結合，就要加上 v-bind:title-text (簡寫 :title-text)。
+    <br>
+    - 全部的 Components 可以參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/"
+        style="text-decoration:none;" target="blank">這裡</a>
+</h4>
+<mat-card class="source-code-tab-card">
+    <mat-tab-group class="tab-source-code-background">
+        <mat-tab label="示例圖">
+            <img width="90%" src="assets/vue/chart/example.png" />
+        </mat-tab>
+        <mat-tab label="HTML">
+            <img width="60%" src="assets/vue/chart/html.png" />
+        </mat-tab>
+        <mat-tab label="Data">
+            <img width="60%" src="assets/vue/chart/data.png" />
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
+
+<h3>
+    Kendo-Chart 裡常用的屬性
+</h3>
+<h4>
+    - <code>
+        <a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;" target="blank">:category-axis</a>
+    </code>對分類軸線進行設定，比如單位、顏色、最大值、最小值等等，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/CategoryAxisProps/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>
+        <a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;" target="blank">:value-axis</a>
+    </code>對分類軸的所要呈現的值進行設定，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ValueAxisProps/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>
+        <a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;" target="blank">:legend</a>
+    </code>對圖例的顯示，設定位置、高度、寬度等等，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/LegendProps/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>
+        <a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;" target="blank">:series</a>
+    </code>對圖表系列類型由類型字段的值判斷，如果缺少類型值會直接使用默認值，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/SeriesDefaultsProps/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>
+        <a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;" target="blank">:title</a>
+    </code>對圖表標題的文字設定，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/TitleProps/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>
+        <a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;" target="blank">:tooltip</a>
+    </code>對圖表工具提示的設定，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/TooltipProps/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>
+        <a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;" target="blank">:chart-area</a>
+    </code>對圖表區域設定，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/ChartAreaProps/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>:theme</code>圖表主題設定，例如：sass、black、blueopal、bootstrap、default...
+    <br>
+    - 更多可以參考<a href="https://www.telerik.com/kendo-vue-ui/components/charts/api/chart/Chart/" style="text-decoration:none;"
+        target="blank">這裡</a>
+</h4>
