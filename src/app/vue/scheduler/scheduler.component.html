@@ -1,1 +1,96 @@
-<p>還在加緊趕工中...</p>
+<h3>
+    事前準備
+</h3>
+
+<h4>
+    這邊假設已經準備好
+    <a href="https://vuejs.org/v2/guide/installation.html" style="text-decoration:none;" target="blank"> Vue</a>
+    開發環境 3.x版以上
+    <br />
+    1. vue create kendo-vue-scheduler
+    <br />
+    2. cd kendo-vue-scheduler
+    <br />
+    3. npm install --save @progress/kendo-ui
+    <br />
+    4. npm install --save @progress/kendo-theme-default
+    <br />
+    5. npm install --save @progress/kendo-scheduler-vue-wrapper
+    <br>
+    6. 請先下載完整範例程式碼
+    <a target="blank" style="text-decoration:none;" href="https://github.com/AccesssoftTW/kendo-vue-scheduler">
+        Github
+    </a>
+</h4>
+
+<h3>
+    選擇要呈現樣式
+</h3>
+<h4>
+    - 它提供了以不同的視圖呈現計劃的事件的選項-作為一天，一整週或一個月，或作為需要完成的任務列表。
+    <br>
+    - 它也提供了鍵盤指令，更多說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/scheduler/keyboard-navigation/">這裡</a>
+    <br>
+    - 你可以自由設定初始時間、工作時段更可以匯出PDF，下面將為您說明Kendo-Scheduler 裡常用的屬性。
+    <br>
+
+    - 更多說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/scheduler/"
+        style="text-decoration:none;" target="blank">這裡</a>
+</h4>
+<mat-card class="source-code-tab-card">
+    <mat-tab-group class="tab-source-code-background">
+        <mat-tab label="示例圖">
+            <img width="90%" src="assets/vue/scheduler/example.png" />
+        </mat-tab>
+        <mat-tab label="HTML">
+            <img width="60%" src="assets/vue/scheduler/html.png" />
+        </mat-tab>
+        <mat-tab label="Data">
+            <img width="60%" src="assets/vue/scheduler/data.png" />
+        </mat-tab>
+        <mat-tab label="Methods">
+            <img width="60%" src="assets/vue/scheduler/methods.png" />
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>
+
+<h3>
+    Kendo-Scheduler 裡常用的屬性
+</h3>
+<h4>
+    - <code>:toolbar="['pdf']"</code>、<code>:pdf-file-name</code>
+    設定匯出PDF按鈕以及匯出PDF的檔名，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/scheduler/pdf-export/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+    - <code>:start-time</code>、<code>:end-time</code>
+    設定行事曆開始和結束時間
+    <br>
+    - <code> :timezone</code>
+    設定時區，另附上<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" style="text-decoration:none;"target="blank">時區對照表</a>
+    <br>
+    - <code>:selectable="true"</code>
+    設定一次選擇多個時段並可以同時移動他們，更多詳細說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/scheduler/selection/" style="text-decoration:none;"target="blank">這裡</a>
+    <br>
+</h4>
+
+<h3>
+    Kendo-Scheduler 裡常用的方法
+</h3>
+<h4>
+    - <code>@change</code>當用戶要選擇時段時觸發此事件
+    <br>
+    - <code>@edit</code>當用戶要編輯既有行程時觸發此事件
+    <br>
+    - <code>@add</code>當用戶要添加新行程時觸發此事件
+    <br>
+    - <code>@cancel</code>當用戶要取消行程時觸發此事件
+    <br>
+    - <code>@move</code>當用戶要移動既有行程時觸發此事件
+    <br>
+    - <code>@save</code>當用戶要儲存行程時觸發此事件
+    <br>
+    - <code>@resize</code>當用戶要拖拉調整行程時間時觸發此事件
+    <br>
+    - <code>@navigate</code>當用戶要改選日期或週期時觸發此事件
+    <br>
+    - 更多方法說明請參考<a href="https://www.telerik.com/kendo-vue-ui/components/scheduler/api/Scheduler/" style="text-decoration:none;"target="blank">這裡</a>
+</h4>
