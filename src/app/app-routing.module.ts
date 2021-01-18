@@ -18,12 +18,12 @@ import { AngularChartComponent } from './angular/chart/chart.component';
 import { MemberComponent } from './admin/member/member.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     children: [
       { path: '', redirectTo: 'jquery-install-guide', pathMatch: 'full' },
       { path: 'jquery-install-guide', component: InstallGuideComponent },

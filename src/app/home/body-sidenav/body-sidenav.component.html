@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" mode="side" [opened]="panelOpenState">
-    <div style="margin-left: 5%;">
+    <!-- <div style="margin-left: 5%;">
       <mat-form-field>
         <mat-select [(value)]="selectedProduct">
           <mat-option *ngFor="let productListData of productListDatas" [value]="productListData.value">
@@ -8,7 +8,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
+    </div> -->
     <mat-list *ngIf="selectedProduct == 'kendo'">
       <div *ngFor="let sessionListData of sessionListDatas">
         <h3 mat-subheader>{{ sessionListData.name }}</h3>
